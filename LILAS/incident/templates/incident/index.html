@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'incident/style.css' %}">
+        
+       
+       
+       <!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+        <link rel="stylesheet" href="{% static 'incident/lib_ext/datePicker.css' %}" />
+        
+        
+        
+        <title>LILAS</title>
+    </head>
+    <body>
+        <header>
+        <table style="width:100%;">
+            <tr>
+                <th> <h1>L I L A S</h1> </th>
+                <th class="boutonApp" onclick="window.location.href='/incident'" style="border-bottom: 5px solid #d3defc;">Tickets d'événements</th> 
+                <th class="boutonApp" onclick="window.location.href='/communication'">Tickets de communication</th>
+                <th class="boutonApp" onclick="window.location.href='/configSalle'">Tickets opérateurs</th>
+                <th class="boutonApp" onclick="window.location.href='/loadFic'"><img style="width: 30px; border-radius: 30px;" src="{% static 'loadFic/images/upload_icon.png' %}"></img></th>
+            </tr>
+        </table>
+        </header>
+        <div>
+            <div>
+                <form action="." method="post">
+                    {% csrf_token %}
+                    <ul>
+                        <li>Date initiale {{ form.dateDebut }}</li>
+                        <li>Heure initiale{{ form.heureDebut }}</li>
+                        <li>Date de fin {{ form.dateFin }}</li>
+                        <li>Heure de fin {{ form.heureFin }}</li>
+                        <li><input type="submit" value="Submit"></li>
+                    </ul>
+                </form> 
+            </div>
+        </div>
+        <div>
+            <div class= "limiter">
+                {% if IncidentListe %}
+                <div>
+                    <table id="tableauStatistiques">
+                         <thead>
+                            <tr>
+                                <th class="colonne_type">Type élément</th>
+                                <th class="colonne_nom">Nom élément</th>
+                                <th class="colonne_etat">Etat élément</th>
+                                <th class="colonne_gravite">Gravité</th>
+                                <th class="colonne_apparition">Date d'apparition</th>
+                                <th class="colonne_disparition">Date de disparition</th>                    
+                            </tr>
+                         </thead>
+                         <tbody>
+                            {% for incident in IncidentListe %}
+                            <tr>
+                                <td class="colonne_type">{{ incident.type_element }}</td>
+                                <td class="colonne_nom">{{ incident.nom_element }}</td>
+                                <td class="colonne_etat">{{ incident.etat_element }}</td>
+                                <td class="colonne_gravite">{{ incident.gravite }}</td>
+                                <td class="colonne_apparition">{{ incident.date_apparition|date:"d/m/y_H:i:s" }}</td>
+                                <td class="colonne_disparition">{{ incident.date_disparition_systeme|date:"d/m/y_H:i:s" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                     </table>
+                 </div>
+                 {% else %}
+                <p>Aucun incident réperetorié.</p>
+                {% endif %}   
+            </div>
+            
+            <div class="limiter_stats">
+            {% if listeStats %}
+                
+                <div>
+                    <table id="tabStatF">
+                        <thead>
+                             <tr>
+                                <th id = 'boutonNomElement' class="colonne1">Nom élément</th>
+                                <th id = 'boutonNbOccurrence' class="colonne2">Nombre d'occurrences</th>
+                                <th id = 'boutonDureeIndispo' class="colonne3">Durée d'indisponnibilité (s)</th>               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for s in listeStats %}
+                            <tr>
+                                <td class="colonne1">{{ s.0 }}</td>
+                                <td class="colonne2">{{ s.1 }}</td>
+                                <td class="colonne3">{{ s.2 }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                           
+                {% endif %}
+            </div>
+        </div>
+        <footer>
+        </footer>
+        <script id="TriLignesStat" type="text/javascript">
+        
+        let toggle = 0;
+        
+        
+        //Fonctions de Tri
+        function triParNomElementCroissant(a, b){
+            var x = a[0];
+            var y = b[0];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParNomElementDecroissant(a, b){
+            var x = a[0];
+            var y = b[0];
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParNbOccurrenceCroissant(a, b){
+            var x = Number(a[1]);
+            var y = Number(b[1]);
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParNboccurrenceDecroissant(a, b){
+            var x = Number(a[1]);
+            var y = Number(b[1]);
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParDureeIndispoCroissant(a, b){
+            var x = Number(a[2]);
+            var y = Number(b[2]);
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParDureeIndispoDecroissant(a, b){
+            var x = Number(a[2]);
+            var y = Number(b[2]);
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+       
+        
+        //On récupère le tableau de statistiques dans un tableau javascript
+        var tableau = document.getElementById("tabStatF").rows;
+        var longueur = tableau.length;
+        var tabStats = new Array();
+        
+        for (var i = 1; i < longueur; i++)
+        {
+            var ligne = tableau[i].cells;
+            var tampon = new Array();
+            for (var j = 0; j < 3; j++)  //ATTENTION !!! variable à changer si on augmente le nombre de colonnes du tableau de statistiques
+            {
+                tampon.push(ligne[j].innerHTML);
+            }
+            tabStats.push(tampon);
+        }
+            
+        //tabStats est ici le tableau de statistiques. Il est rempli.
+        
+        //----- CLIQUE BOUTON NOM ELEMENT -----//
+    
+        const boutonNomElement = document.getElementById('boutonNomElement');
+        boutonNomElement.addEventListener('click', function() {
+    
+            
+        
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (toggle == 0)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNomElementCroissant);
+                toggle = 1;
+            }
+            else if (toggle == 1)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNomElementDecroissant);
+                toggle = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < longueur-1; i++)
+            {
+                var ligne = tableau[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabStats[i][j];
+                }
+            }
+        
+        
+        
+        });
+        
+         //----- CLIQUE BOUTON NOMBRE OCCURRENCE -----//
+    
+        const boutonNbOccurrence = document.getElementById('boutonNbOccurrence');
+        boutonNbOccurrence.addEventListener('click', function() {
+            //On regarde à quelle valeur est le toggle
+            
+            if (toggle == 0)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNbOccurrenceCroissant);
+                toggle = 1;
+            }
+            else if (toggle == 1)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNboccurrenceDecroissant);
+                toggle = 0;
+            }
+            //On remplace maintenant les lignes du tableau
+            
+            for (var i = 0; i < longueur-1; i++)
+            {
+                var ligne = tableau[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabStats[i][j];
+                }
+            }
+
+        });
+        
+         //----- CLIQUE BOUTON DUREE INDISPO -----//
+    
+        const boutonDureeIndispo = document.getElementById('boutonDureeIndispo');
+        boutonDureeIndispo.addEventListener('click', function() {
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (toggle == 0)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParDureeIndispoCroissant);
+                toggle = 1;
+                
+            }
+            else if (toggle == 1)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParDureeIndispoDecroissant);
+                toggle = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < longueur-1; i++)
+            {
+                var ligne = tableau[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabStats[i][j];
+                }
+            }
+        
+        
+        
+        });
+        
+        </script>
+        
+
+<!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+    <script src="{% static 'communication/lib_ext/datePicker_jquery-1.12.4.js' %}"></script>
+    <script src="{% static 'communication/lib_ext/datePicker_jquery-ui.js' %}"></script>
+    <script src="{% static 'communication/lib_ext/datePicker_jquery-ui.min.js' %}"></script>
+<!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+    
+
+        <!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+        <script>
+           $(document).ready(function(){
+             $('#id_dateDebut').datepicker({ dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            showWeek: true,
+            firstDay: 1,
+            /*showOtherMonths: true,
+            selectOtherMonths: true*/ });
+            
+            $('#id_dateFin').datepicker({ dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            showWeek: true,
+            firstDay: 1,
+            /*showOtherMonths: true,
+            selectOtherMonths: true*/ });
+            });
+        </script>
+    
+    
+    </body>
+    
+
+</html>

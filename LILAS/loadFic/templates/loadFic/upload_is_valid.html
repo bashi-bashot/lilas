@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'loadFic/style.css' %}">
+       
+        <title>LILAS</title>
+    </head>
+    <body>
+        <header>
+        <table style="width:100%;">
+            <tr>
+                <th> <h1>L I L A S</h1> </th>
+                <th class="boutonApp" onclick="window.location.href='/incident'">Tickets d'événements</th> 
+                <th class="boutonApp" onclick="window.location.href='/communication'">Tickets de communication</th>
+                <th class="boutonApp" onclick="window.location.href='/configSalle'">Tickets opérateurs</th>
+                <th class="boutonApp" onclick="window.location.href='/loadFic'" style="border-bottom: 5px solid #d3defc;"><img style="width: 30px; border-radius: 30px;" src="{% static 'loadFic/images/upload_icon.png' %}"></img></th>
+            </tr>
+        </table>
+        </header>
+        <div style='margin-left: 2em; margin-top: 2em;'>
+            <input type="button" onclick="window.location.href='/admin'" value="Panneaux d'administration" style='padding: 0.5em;' >
+            <input type="button" onclick="window.location.href='/loadFic'" value="Nouveau Transfert" style='padding: 0.5em;' >
+        </div>
+        <div id='sucessful_upload'>
+            <div style='margin-left: 10em; margin-top: 10em;'>
+                <strong>SUCCESSFUL UPLOAD</strong>
+                <p> Fichier(s) chargé(s):
+                {% if fileConf %}<li style='margin-left: 2em'>{{ fileConf }}</li>{% endif %}
+                {% if fileSyst %}<li style='margin-left: 2em'>{{ fileSyst }}</li>{% endif %}
+                {% if fileOpe %}<li style='margin-left: 2em'>{{ fileOpe }}</li>{% endif %}
+                {% if fileCom %}<li style='margin-left: 2em'>{{ fileCom }}</li>{% endif %}
+                {% if fileInc %}<li style='margin-left: 2em'>{{ fileInc }}</li>{% endif %}               
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

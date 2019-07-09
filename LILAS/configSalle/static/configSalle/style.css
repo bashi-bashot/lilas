@@ -1,0 +1,169 @@
+
+/* Fichier Style CSS CONFIG_SALLE */
+
+html
+{
+   font-family: Calibri; 
+}
+
+header
+{
+    background-color: #6c7ae0;
+    /* color: #d3defc; */
+    color: white;
+}
+
+header .boutonApp:hover
+{
+    background-color: #d3defc;
+    color: #6c7ae0;
+}
+
+footer 
+{
+    position: absolute; 
+    bottom: 0; 
+    left: 10px; 
+    right: 0
+}
+
+body
+{
+    height: auto;
+    width: auto;
+    margin: auto;
+    padding: auto;
+}
+
+
+table
+{
+    /* margin: auto; */
+}
+
+.divConfUce {
+    width: 70%;
+}
+
+#boutonMain {
+    width: 26%;
+    margin-left: 10%;
+}
+
+.dateTabBouton {
+    /* max-height:25%; */
+    /* max-width:38%; */
+    /* margin-left : 2%; */
+    margin-bottom : 10px;
+    margin-top : 4%;
+    /* position : absolute; */
+    /* top : 66%; */
+}    
+
+.divBouton {
+    float:left;
+    max-height: 32em;
+    overflow-y: auto; /*pour activer les scrollbarres*/
+    /* position: absolute; */
+    /* top: 70%; */
+}
+
+.boutonConf {
+    width: 32%;
+    padding: 1%;
+    margin-top: 0.5%;
+    overflow: hidden;
+}
+
+.divBouton, .boutonConf {    
+    box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.20);
+    -moz-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.20);
+    /* -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15); */
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.20);
+    -o-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.20);
+    -ms-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.20);
+}   
+
+#alignMain {
+    max-height: 100%;
+    margin-left: 7%;
+    margin-right: 7%;
+    
+}
+
+#alignMain > div{
+    float:left;
+    margin:1%;
+}
+
+#tabConfSelect {
+    border-collapse: collapse;
+    width: 100%;
+    max-height: 100%;
+    
+    /* border-radius: 10px; */
+    
+    box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    -moz-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    /* -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15); */
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    -o-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    -ms-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+}
+
+table#tabConfSelect {
+    margin-top: 15px;
+}
+
+table#tabConfSelect td {
+    /* border-bottom-left-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+
+}
+
+table#tabConfSelect th {
+    background-color: #6c7ae0;
+    color: white;
+    /* border-top-left-radius: 10px; */
+    /* border-top-right-radius: 10px; */    
+}
+
+table#tabConfSelect tr {
+    background-color : #f9f9f9;
+}
+
+table#tabConfSelect th, table#tabConfSelect td{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#tabConfSelect thead {
+	display:block;
+}
+#tabConfSelect tbody {
+	display:block;
+	max-height:30em; /* 5 times the equivalent of a text "size". */
+	overflow-y:auto;
+}
+
+#tabConfSelect thead tr th:nth-child(1) { /* column 1 ! */
+    width:10em;
+}
+#tabConfSelect thead tr th:nth-child(2) { /* column 2 */
+    width:60em;
+}
+#tabConfSelect tbody tr:first-child td:nth-child(1) { /* column 1 ! */
+    width:10em;
+}
+#tabConfSelect tbody tr:first-child td:nth-child(2) { /* column 2 */
+    width:60em;}
+
+/* #tabConfSelect tr:nth-child(even) { */
+    /* background-color: #d3defc; */
+/* } */
+
+#tabConfSelect tr:hover {
+    /* background-color: #f5f5f5; */
+    background-color: #d3defc;
+}

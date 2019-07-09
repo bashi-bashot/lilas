@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'communication/style.css' %}">
+        
+        
+        <!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+        <link rel="stylesheet" href="{% static 'communication/lib_ext/datePicker.css' %}" />
+        
+        <!-- FIN NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+               
+        <title>LILAS</title>
+    </head>
+    <body>
+        <header>
+            <table style="width:100%;">
+                <tr>
+                    <th> <h1>L I L A S</h1> </th>
+                    <th class="boutonApp" onclick="window.location.href='/incident'">Tickets d'événements</th> 
+                    <th class="boutonApp" onclick="window.location.href='/communication'" style="border-bottom: 5px solid #d3defc;">Tickets de communication</th>
+                    <th class="boutonApp" onclick="window.location.href='/configSalle'">Tickets opérateurs</th>
+                    <th class="boutonApp" onclick="window.location.href='/loadFic'"><img style="width: 30px; border-radius: 30px;" src="{% static 'loadFic/images/upload_icon.png' %}"></img></th>
+                </tr>
+            </table>
+        </header>
+        <div>
+            <table style="width:100%;">
+                <tr>
+                    <form action="." method="post" autocomplete="off">
+                        <th> 
+                                {% csrf_token %}
+                                <ul>
+                                    <div>Date initiale {{ form.dateDebut}} </div>
+                                    <div>Heure initiale {{ form.heureDebut }} (xx:xx:xx)</div>
+                                    <div>Date de fin {{ form.dateFin }}</div>
+                                    <div>Heure de fin {{ form.heureFin }} (xx:xx:xx)</div> 
+                                </ul>
+                        </th>
+                        <th> Séléction secteur {{ form.positionSpinner }}</th> 
+                        <th> Séléction du correspondant {{ form.correspondantSpinner }}</th>
+                        <th> <input type="submit" value="Submit"> </th>
+                    </form>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <div class="limiter">
+            {% if AppelListe %}
+                <div>
+                    <table id ='tabPrincipale'>
+                        <thead>
+                            <tr>
+                                <th id="colonne_appelant" class="appelant_appele">Appelant</th>
+                                <th id="colonne_appele" class="appelant_appele">Appelé</th>
+                                <th id="colonne_duree" class="duree">Durée (s)</th>
+                                <th id="colonne_type" class="typeAppel">Type</th>
+                                <th id="colonne_date" class="dateAppel">Date</th>
+                                <th id="colonne_liberation" class="liberationAppel">Libération</th>                    
+                                <th id="colonne_etat" class="etatAppel">Etat</th>
+                                <th id="colonne_fxEntrant" class="Fx_e_Appel">Fx entrant</th>
+                                <th id="colonne_fxSortant" class="Fx_a_Appel">Fx sortant</th>
+                                <th id="colonne_ligneAppelante" class="ligne_appelante" >Ligne appelante</th>
+                                <th id="colonne_ligneAppelee" class="ligne_appele">Ligne appelee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for appel in AppelListe %}
+                            <tr>
+                                <td class="appelant_appele">{{ appel.nom_appele }}</td>
+                                <td class="appelant_appele">{{ appel.nom_appelant }}</td>
+                                <td class="duree">{{ appel.duree }}</td>
+                                <td class="typeAppel">{{ appel.type }}</td>
+                                <td class="dateAppel">{{ appel.date|date:"d/m/y_H:i:s" }}</td>
+                                <td class="liberationAppel">{{ appel.liberation }}</td>
+                                <td class="etatAppel">{{ appel.etat}}</td>
+                                <td class="Fx_e_Appel">{{ appel.fx_entrant }}</td>
+                                <td class="Fx_a_Appel">{{ appel.fx_sortant }}</td>
+                                <td class="ligne_appelante">{{ appel.line_appelante }}</td>
+                                <td class="ligne_appelante">{{ appel.line_appele }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <p>Aucun appel réperetorié.</p>
+            {% endif %}
+            </div>
+            <div class="limiter_stats">
+            {% if ListeStats %}
+                <div>
+                    <table id="tabStatF" >
+                        <thead>
+                            <tr>
+                                <th class="colonne1">
+                                    <form action="." method="post">
+                                        
+                                        {% csrf_token %}
+                                        {{ statForm.selectionTypeSpinner}}
+                                        
+                                        <input id="boutonSubmit" type="submit" value="Submit">
+                                    </form>
+                                </th>
+                                <th id ="boutonNbAppel" class="colonne2">Nombre d'appel</th>
+                                <th id="boutonDureeCumulee"class="colonne3">Durée Cumulée (s)</th>
+                                <th id="boutonNbEchec" class="colonne4">Nombre d'échec</th>
+                                <th id="boutonNbRefus" class="colonne5">Nombre de refus</th>
+                                <th id="boutonTOccupation" class="colonne6">Taux d'occupation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {% for stat in ListeStats %}
+                            <tr>
+                                <td class="colonne1">{{ stat.0 }}</td>
+                                <td class="colonne2">{{ stat.1 }}</td>
+                                <td class="colonne3">{{ stat.2 }}</td>
+                                <td class="colonne4">{{ stat.3 }}</td>
+                                <td class="colonne5">{{ stat.4 }}</td>
+                                <td class="colonne6">{{ stat.5 }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                       
+                    </table>
+                </div>
+            {% endif %}
+            </div>
+        </div>
+        <!-- Probleme selection tab stat sur un petit écran avec le footer -->
+        <!-- <footer> -->
+            <!-- <p>{{ AppelListe.0.date}} -------- {{ AppelListe.0.date}}</p> -->
+        <!-- </footer> -->
+        
+        <script id="TriAppels" type="text/javascript">
+        var tog = 0;
+        
+        
+        
+        function triParAppelantCroissant(a, b){
+            var x = a[0];
+            var y = b[0];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParAppelantDecroissant(a, b){
+            var x = a[0];
+            var y = b[0];
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParAppeleCroissant(a, b){
+            var x = a[1];
+            var y = b[1];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParAppeleDecroissant(a, b){
+            var x = a[1];
+            var y = b[1];
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParDureeCroissant(a, b){
+            var x = Number(a[2]);
+            var y = Number(b[2]);
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParDureeDecroissant(a, b){
+            var x = Number(a[2]);
+            var y = Number(b[2]);
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParTypeCroissant(a, b){
+            var x = a[3];
+            var y = b[3];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParTypeDecroissant(a, b){
+            var x = a[3];
+            var y = b[3];
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParDateCroissant(a, b){
+            var x = a[4];
+            var y = b[4];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParDateDecroissant(a, b){
+            var x = a[4];
+            var y = b[4];
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        //On récupère le tableau d'appels dans un tableau javascript
+        var tableauAppels = document.getElementById("tabPrincipale").rows;
+        var l = tableauAppels.length;
+        var tabAppel = new Array();
+        
+        for (var i = 1; i < l; i++) //L et non 1
+        {
+            var ligne = tableauAppels[i].cells;
+            var tampon = new Array();
+            for (var j = 0; j < ligne.length; j++)
+            {
+                tampon.push(ligne[j].innerHTML);
+            }
+            tabAppel.push(tampon);
+        }
+            
+        //tabAppel est ici le tableau d'appels. Il est rempli. Il ne contient a priori pas la première ligne (le nom des colonnes) du tableau
+        
+        //----- CLIQUE BOUTON APPELANT -----//
+        
+        const boutonAppelant = document.getElementById('colonne_appelant');
+        boutonAppelant.addEventListener('click', function() {
+            console.log("Appelant");
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (tog == 0)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParAppelantCroissant);
+                tog = 1;
+                console.log("Croissant");
+            }
+            else if (tog == 1)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParAppelantDecroissant);
+                tog = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < l-1; i++)
+            {
+                var ligne = tableauAppels[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabAppel[i][j];
+                }
+            }
+            
+            
+            
+        });
+        
+        //----- CLIQUE BOUTON APPELE -----//
+        
+        const boutonAppele = document.getElementById('colonne_appele');
+        boutonAppele.addEventListener('click', function() {
+            console.log("Appele");
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (tog == 0)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParAppeleCroissant);
+                tog = 1;
+                console.log("Croissant");
+            }
+            else if (tog == 1)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParAppeleDecroissant);
+                tog = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < l-1; i++)
+            {
+                var ligne = tableauAppels[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabAppel[i][j];
+                }
+            }
+            
+        });
+        
+        //----- CLIQUE BOUTON DUREE -----//
+        
+        const boutonDuree = document.getElementById('colonne_duree');
+        boutonDuree.addEventListener('click', function() {
+            console.log("Duree");
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (tog == 0)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParDureeCroissant);
+                tog = 1;
+                console.log("Croissant");
+            }
+            else if (tog == 1)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParDureeDecroissant);
+                tog = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < l-1; i++)
+            {
+                var ligne = tableauAppels[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabAppel[i][j];
+                }
+            }
+            
+        });
+        
+        //----- CLIQUE BOUTON TYPE -----//
+        
+        const boutonType = document.getElementById('colonne_type');
+        boutonType.addEventListener('click', function() {
+            console.log("type");
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (tog == 0)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParTypeCroissant);
+                tog = 1;
+                console.log("Croissant");
+            }
+            else if (tog == 1)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParTypeDecroissant);
+                tog = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < l-1; i++)
+            {
+                var ligne = tableauAppels[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabAppel[i][j];
+                }
+            }
+            
+        });
+        
+        
+        //----- CLIQUE BOUTON DATE -----//
+        
+        const boutonDate = document.getElementById('colonne_date');
+        boutonDate.addEventListener('click', function() {
+            console.log("date");
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (tog == 0)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParDateCroissant);
+                tog = 1;
+                console.log("Croissant");
+            }
+            else if (tog == 1)
+            {
+                
+                //On trie les lignes de l'Array tabAppel par ordre de durée Cumulée croissante.
+                tabAppel.sort(triParDateDecroissant);
+                tog = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < l-1; i++)
+            {
+                var ligne = tableauAppels[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabAppel[i][j];
+                }
+            }
+            
+        });
+        
+        </script>
+        
+        <script id="TriLignesStat" type="text/javascript">
+        
+        var toggle = 0;
+        
+        function triParDureeCumuleeCroissant(a, b){
+            var x = Number(a[2]);
+            var y = Number(b[2]);
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParDureeCumuleeDecroissant(a, b){
+            var x = Number(a[2]);
+            var y = Number(b[2]);
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParNbAppelCroissant(a, b){
+            var x = Number(a[1]);
+            var y = Number(b[1]);
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParNbAppelDeroissant(a, b){
+            var x = Number(a[1]);
+            var y = Number(b[1]);
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParNbEchecCroissant(a, b){
+            var x = Number(a[3]);
+            var y = Number(b[3]);
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParNbEchecDeroissant(a, b){
+            var x = Number(a[3]);
+            var y = Number(b[3]);
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParNbRefusCroissant(a, b){
+            var x = Number(a[4]);
+            var y = Number(b[4]);
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParNbRefusDeroissant(a, b){
+            var x = Number(a[4]);
+            var y = Number(b[4]);
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        function triParNbTauxOccupationCroissant(a, b){
+            //console.log("Croissant");
+            var x = parseFloat(a[5].replace(',', '.'));
+            var y = parseFloat(b[5].replace(',', '.'));
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        
+        function triParNbTauxOccupationDeroissant(a, b){
+            //console.log("Décroissant");
+            var x = parseFloat(a[5].replace(',', '.'));
+            var y = parseFloat(b[5].replace(',', '.'));
+            
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+        
+        //On récupère le tableau de statistiques dans un tableau javascript
+        var tableau = document.getElementById("tabStatF").rows;
+        var longueur = tableau.length;
+        var tabStats = new Array();
+        
+        for (var i = 1; i < longueur; i++)
+        {
+            var ligne = tableau[i].cells;
+            var tampon = new Array();
+            for (var j = 0; j < 6; j++)
+            {
+                tampon.push(ligne[j].innerHTML);
+            }
+            tabStats.push(tampon);
+        }
+            
+        //tabStats est ici le tableau de statistiques. Il est rempli.
+        
+        //----- CLIQUE BOUTON DUREE CUMULEE -----//
+        
+        const boutonDureeCumulee = document.getElementById('boutonDureeCumulee');
+        boutonDureeCumulee.addEventListener('click', function() {
+            console.log("Duree cumulée");
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (toggle == 0)
+            {
+                
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParDureeCumuleeCroissant);
+                toggle = 1;
+            }
+            else if (toggle == 1)
+            {
+                
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParDureeCumuleeDecroissant);
+                toggle = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < longueur-1; i++)
+            {
+                var ligne = tableau[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabStats[i][j];
+                }
+            }
+            
+            
+            
+        });
+        
+        //----- CLIQUE BOUTON NOMBRE APPEL -----//
+        
+        const boutonNombreAppel = document.getElementById('boutonNbAppel');
+        boutonNombreAppel.addEventListener('click', function() {
+            
+        
+            
+            //On regarde à quelle valeur est le toggle
+            console.log("FLAG");
+            if (toggle == 0)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNbAppelCroissant);
+                toggle = 1;
+            }
+            else if (toggle == 1)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNbAppelDeroissant);
+                toggle = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < longueur-1; i++)
+            {
+                var ligne = tableau[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabStats[i][j];
+                }
+            }
+            
+            
+            
+        });
+        
+       
+        
+        //----- CLIQUE BOUTON NOMBR ECHEC -----//
+        
+        const boutonNombreEchec = document.getElementById('boutonNbEchec');
+        boutonNombreEchec.addEventListener('click', function() {
+        
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (toggle == 0)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNbEchecCroissant);
+                toggle = 1;
+            }
+            else if (toggle == 1)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNbEchecDeroissant);
+                toggle = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < longueur-1; i++)
+            {
+                var ligne = tableau[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabStats[i][j];
+                }
+            }
+            
+            
+            
+        });
+        
+            //----- CLIQUE BOUTON NOMBR REFUS -----//
+        
+        const boutonNombreRefus = document.getElementById('boutonNbRefus');
+        boutonNombreRefus.addEventListener('click', function() {
+        
+            
+            //On regarde à quelle valeur est le toggle
+            
+            if (toggle == 0)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNbRefusCroissant);
+                toggle = 1;
+            }
+            else if (toggle == 1)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNbRefusDeroissant);
+                toggle = 0;
+            }
+            
+            
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < longueur-1; i++)
+            {
+                var ligne = tableau[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabStats[i][j];
+                }
+            }
+        });
+        
+                //----- CLIQUE BOUTON TAUX OCCUPATION -----//
+        
+        const boutonTauxOccupation = document.getElementById('boutonTOccupation');
+        boutonTauxOccupation.addEventListener('click', function() {
+        
+            //On regarde à quelle valeur est le toggle
+            
+            if (toggle == 0)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNbTauxOccupationCroissant);
+                console.log("Tri croissant");
+                toggle = 1;
+            }
+            else if (toggle == 1)
+            {
+                //On trie les lignes de l'Array tabStats par ordre de durée Cumulée croissante.
+                tabStats.sort(triParNbTauxOccupationDeroissant);
+                console.log("Tri décroissant");
+                toggle = 0;
+            }
+            
+            //On remplace maintenant les lignes du tableau
+            for (var i = 0; i < longueur-1; i++)
+            {
+                var ligne = tableau[i+1].cells;
+                for (var j = 0; j < ligne.length; j++)
+                {
+                    ligne[j].innerHTML = tabStats[i][j];
+                }
+            }
+        });
+        </script>
+    
+    <!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+        <script src="{% static 'communication/lib_ext/datePicker_jquery-1.12.4.js' %}"></script>
+        <script src="{% static 'communication/lib_ext/datePicker_jquery-ui.js' %}"></script>
+        <script src="{% static 'communication/lib_ext/datePicker_jquery-ui.min.js' %}"></script>
+    <!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+
+        <script>
+            $(document).ready(function(){
+                $('#id_dateDebut').datepicker({ dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true,
+                showWeek: true,
+                firstDay: 1,
+                /*showOtherMonths: true,
+                selectOtherMonths: true*/ });
+                
+                $('#id_dateFin').datepicker({ dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true,
+                showWeek: true,
+                firstDay: 1,
+                /*showOtherMonths: true,
+                selectOtherMonths: true*/ });
+                
+               
+            });
+        </script>
+    </body>
+</html>

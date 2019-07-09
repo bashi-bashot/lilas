@@ -1,0 +1,19 @@
+"Compte : Historique","ARTEMIS","Rapport : Consultation détaillée des actions opérateurs","Généré le : 25/09/2018 à : 07:23:38","Tri : Chronologique en fonction de la date de l'action opérateur","Page 1/1","Actions opérateurs enregistrées entre le : 24/09/2018 à : 00:00:00 et le : 24/09/2018 à : 23:59:59","","","","","Date/Heure Action","Type Action","Type Elément","Nom Elément","Journée du : 24/09/18","1","24/09/2018  04:36:27","Validation de configuration","STAT","ihm5","","","Sur les éléments :  "," UCE: 'UCE_M2': Les SECT affectés: '_PX, _VX, _TX, _OX, _UX' correspondant à l'ASCT 'm PVTOU'
+UCE: 'UCE_TM': Les SECT affectés: 'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant à l'ASCT 'e RPAE'
+ ---> UCE: 'UCE_AP': Les SECT affectés: 'TN, TB, TE, OT, RT, OY, OG, AP'. L'ASCT choisi 'w RPAW ' contient: 'TN, TB, TE, OT, RT, TH, TP, UK, OY, UZ, OG, AP'.
+UCE: 'UCE_TP': Les SECT affectés: 'TH, TP, UK, UZ' correspondant à l'ASCT 'w HPKZ '
+UCE: 'UCE_SIV': Les SECT affectés: 'IF' correspondant à l'ASCT 'IF'
+UP: 'UP_OCCD': Les GRP affectés: 'OCCD' correspondant à l'AGRP 'm OCCD'
+UP: 'UP_FMP': Les GRP affectés: 'FMP' correspondant à l'AGRP 'FMP'
+UP: 'UP_PDI': Les GRP affectés: 'CSCAM' correspondant à l'AGRP 'm CSCAM'
+UP: 'UP_BTIV': Les GRP affectés: 'BTIV' correspondant à l'AGRP 'BTIV'
+UP: 'UP_ATELIER TPH': Les GRP affectés: 'ATELIER TPH, FERME' correspondant à l'AGRP 'Atel1'
+UP: 'UP_SECTION RADIO': Les GRP affectés: 'RADIO' correspondant à l'AGRP 'RDO'
+UP: 'UP_CHEF DE SALLE': Les GRP affectés: 'CDS' correspondant à l'AGRP 'CDS'
+UP: 'UP_CAUTRA': Les GRP affectés: 'CAUTRA' correspondant à l'AGRP 'CTRA'
+UP: 'UP_ILOT ARTEMIS': Les GRP affectés: 'TPH' correspondant à l'AGRP 'TPH'
+UP: 'UP_SUPERVISION TECH': Les GRP affectés: 'MO' correspondant à l'AGRP 'MO'
+UP: 'UP_PSA': Les GRP affectés: 'PSA' correspondant à l'AGRP 'PSA'
+UP: 'UP_SECTION RESEAU': Les GRP affectés: 'RESEAU' correspondant à l'AGRP 'RES'
+","Total : 130 actions","  Fin du Rapport  ","Rapport : Consultation détaillée des actions opérateurs"
+"Compte : Historique","ARTEMIS","Rapport : Consultation détaillée des actions opérateurs","Généré le : 25/09/2018 à : 07:23:38","Tri : Chronologique en fonction de la date de l'action opérateur","Page 1/1","Actions opérateurs enregistrées entre le : 24/09/2018 à : 00:00:00 et le : 24/09/2018 à : 23:59:59","","","","","Date/Heure Action","Type Action","Type Elément","Nom Elément","Journée du : 24/09/18","2","24/09/2018  04:36:31","Activation de nouvelle configuration","SERV","serv1","","","Sur les éléments :  ","","Total : 130 actions","  Fin du Rapport  ","Rapport : Consultation détaillée des actions opérateurs"

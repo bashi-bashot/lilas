@@ -1,0 +1,6 @@
+*.py[oc]
+db.sqlite3
+ELTS.csv
+*.pyc
+upload_*.txt
+upload_*.csv

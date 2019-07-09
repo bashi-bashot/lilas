@@ -1,0 +1,295 @@
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('OpenSans-Regular-webfont.eot');
+    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('OpenSans-Regular-webfont.woff') format('woff'),
+         url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+html
+{
+   font-family: Calibri; 
+}
+
+header
+{
+    background-color: #6c7ae0;
+    /* color: #d3defc; */
+    color: white;
+}
+
+header .boutonApp:hover
+{
+    background-color: #d3defc;
+    color: #6c7ae0;
+}
+
+body
+{
+    height: auto;
+    width: auto;
+    margin: auto;
+    padding: auto;
+}
+
+footer 
+{
+    position: absolute; 
+    bottom: 0; 
+    left: 10px; 
+    right: 0
+}
+
+h6
+{
+    font-size: 16px;
+    
+}
+
+td{
+    white-space:nowrap;
+    padding:5px;
+    
+}
+
+
+li a {
+    color: green;
+}
+
+
+
+table
+{
+    margin: auto;
+}
+
+/* * { */
+	/* margin: 0px;  */
+	/* padding: 0px;  */
+	/* box-sizing: border-box; */
+/* } */
+
+p {margin: 0px;}
+
+ul, li {
+	margin: 0px;
+	
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+
+
+.limiter {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.limiter_stats {
+  width: 600px;
+  /* margin: 0 auto; */
+  margin-top:0px;
+  margin-bottom:0px; 
+  margin-left:44%
+  
+}
+
+
+table {
+  width: 100%;
+}
+
+th, td {
+  /* font-weight: unset; */
+  /* padding-right: 10px; */
+}
+
+
+
+
+
+.colonne_type{
+    width : 150px;
+}
+
+.colonne_nom{
+    width : 150px;
+}
+
+.colonne_etat{
+    width : 150px;
+}
+
+.colonne_gravite{
+    width : 150px;
+}
+
+.colonne_apparition{
+    width : 200px;
+}
+
+.colonne_disparition{
+    width : 200px;
+}
+
+.colonne1{
+    width : 300px;    
+}
+
+.colonne2{
+    width : 150px;
+}
+
+.colonne3{
+    width : 150px;
+}
+
+
+/* ----------------------TABLE STATS ------------------------- */
+
+
+#tabStatF {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    -moz-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    /* -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15); */
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    -o-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    -ms-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+}
+
+table#tabStatF {
+    margin-top: 15px;
+    
+}
+
+table#tabStatF td {
+    /* border-bottom-left-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+    
+
+}
+
+table#tabStatF th {
+    background-color: #6c7ae0;
+    color: white;
+    
+    /* border-top-left-radius: 10px; */
+    /* border-top-right-radius: 10px; */    
+}
+
+table#tabStatF tr {
+    background-color : #f9f9f9;
+    
+}
+
+table#tabStatF th, table#tabStatF td{
+    border-bottom: 1px solid #ddd;
+    /* padding: 10px; */
+    text-align: center;
+}
+
+#tabStatF thead {
+	display:block;
+}
+#tabStatF tbody {
+	display:block;
+	overflow-y:auto;
+    max-height:200px;
+}
+
+table#tabStatF th:hover {
+    background-color: #d3defc;
+    color: #6c7ae0;
+    cursor: pointer;
+}
+
+
+#tabStatF tr:hover {
+    /* background-color: #f5f5f5; */
+    background-color: #d3defc;
+}
+
+/* ----------------------TABLE STATS ------------------------- */
+/* --------------------TABLE PRINCIPALE ----------------------- */
+
+
+
+#tableauStatistiques {
+    border-collapse: collapse;
+    width: 100%;
+    
+    
+    
+    /* border-radius: 10px; */
+    
+    box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    -moz-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    /* -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15); */
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    -o-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+    -ms-box-shadow: 5px 5px 20px 0px rgba(0, 16, 83, 0.35);
+}
+
+table#tableauStatistiques {
+    margin-top: 15px;
+}
+
+table#tableauStatistiques td {
+    /* border-bottom-left-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+
+}
+
+table#tableauStatistiques th {
+    background-color: #6c7ae0;
+    color: white;
+    /* border-top-left-radius: 10px; */
+    /* border-top-right-radius: 10px; */    
+}
+
+table#tableauStatistiques tr {
+    background-color : #f9f9f9;
+}
+
+table#tableauStatistiques th, table#tableauStatistiques td{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#tableauStatistiques thead {
+	display:block;
+}
+#tableauStatistiques tbody {
+	display:block;
+	overflow-y:auto;
+    height:300px;
+}
+
+table#tableauStatistiques th:hover {
+    background-color: #d3defc;
+    color: #6c7ae0;
+    /* cursor: pointer; */
+}
+
+
+/* #tabConfSelect tr:nth-child(even) { */
+    /* background-color: #d3defc; */
+/* } */
+
+
+
+/* --------------------TABLE PRINCIPALE ----------------------- */
+

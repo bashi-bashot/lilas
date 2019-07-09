@@ -1,0 +1,71 @@
+
+/* Fichier Style CSS CONFIG_SALLE */
+
+html
+{
+   font-family: Calibri; 
+}
+
+header
+{
+    background-color: #6c7ae0;
+    /* color: #d3defc; */
+    color: white;
+}
+
+header .boutonApp:hover
+{
+    background-color: #d3defc;
+    color: #6c7ae0;
+}
+
+footer 
+{
+    position: absolute; 
+    bottom: 0; 
+    left: 10px; 
+    right: 0
+}
+
+body
+{
+    height: auto;
+    width: auto;
+    margin: auto;
+    padding: auto;
+}
+
+li
+{
+    text-align: left;
+}
+
+form li
+{
+    margin: 1em;
+}
+
+/************* Progress Spinner *****************/
+
+#loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}

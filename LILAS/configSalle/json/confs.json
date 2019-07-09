@@ -1,0 +1,2382 @@
+[{
+    "date": "2018-09-24T04:36:27Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_TM",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant \u00e0 l'ASCT 'e RPAE'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, OT, RT, OY, OG, AP'. L'ASCT choisi 'w RPAW '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T04:36:45Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_TM",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant \u00e0 l'ASCT 'e RPAE'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T04:50:43Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_TM",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, TM, TU, PU, US, HP, TW' correspondant \u00e0 l'ASCT 'e LPAE'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T04:54:33Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_TM",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T04:58:45Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_TM",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T05:52:14Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T06:49:04Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T07:36:01Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T07:48:58Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T08:04:20Z",
+    "confUce": []
+},{
+    "date": "2018-09-24T08:04:42Z",
+    "confUce": []
+},{
+    "date": "2018-09-24T08:05:02Z",
+    "confUce": []
+},{
+    "date": "2018-09-24T08:05:27Z",
+    "confUce": []
+},{
+    "date": "2018-09-24T08:06:28Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _UX' correspondant \u00e0 l'ASCT 'm PVTU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_OX' correspondant \u00e0 l'ASCT 'm OX'"
+        }
+    ]
+},{
+    "date": "2018-09-24T08:12:55Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX' correspondant \u00e0 l'ASCT 'm PT'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _OX, _UX' correspondant \u00e0 l'ASCT 'm VOU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T08:35:08Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX' correspondant \u00e0 l'ASCT 'm PT'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _OX, _UX' correspondant \u00e0 l'ASCT 'm VOU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T09:18:55Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX' correspondant \u00e0 l'ASCT 'm PT'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _OX, _UX' correspondant \u00e0 l'ASCT 'm VOU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T09:35:08Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX' correspondant \u00e0 l'ASCT 'm PT'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_UZ",
+            "secteurs": "'UZ' correspondant \u00e0 l'ASCT 'w UZ '"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH' correspondant \u00e0 l'ASCT 'w TH'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _OX, _UX' correspondant \u00e0 l'ASCT 'm VOU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T09:35:44Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_UZ",
+            "secteurs": "'UZ' correspondant \u00e0 l'ASCT 'w UZ '"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH' correspondant \u00e0 l'ASCT 'w TH'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "Aucun."
+        }
+    ]
+},{
+    "date": "2018-09-24T10:01:04Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_UZ",
+            "secteurs": "'UZ' correspondant \u00e0 l'ASCT 'w UZ '"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_RT",
+            "secteurs": "'RT, OG' correspondant \u00e0 l'ASCT 'w OGRT '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH' correspondant \u00e0 l'ASCT 'w TH'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, OY' correspondant \u00e0 l'ASCT 'w OTOY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T10:35:31Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_UZ",
+            "secteurs": "'UZ' correspondant \u00e0 l'ASCT 'w UZ '"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_RT",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH' correspondant \u00e0 l'ASCT 'w TH'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T11:07:33Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_UZ",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        }
+    ]
+},{
+    "date": "2018-09-24T11:28:49Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T12:00:40Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T13:14:07Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T14:47:24Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_PU",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "'TH, UZ' correspondant \u00e0 l'ASCT 'w THUZ'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TP, UK' correspondant \u00e0 l'ASCT 'w TPUK'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T14:51:33Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_PU",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T15:23:51Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_PU",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T15:44:30Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_PU",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T16:30:05Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T16:32:30Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T16:55:57Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T17:22:58Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T17:33:01Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T17:36:16Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T18:26:49Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T18:40:09Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T19:19:14Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T19:21:03Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T19:34:57Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'TN, TB' correspondant \u00e0 l'ASCT 'w TNTB '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'AR' correspondant \u00e0 l'ASCT 'e AR'"
+        },
+        {
+            "nomUce": "UCE_PU",
+            "secteurs": "'TL, TM' correspondant \u00e0 l'ASCT 'e TML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TE, AP' correspondant \u00e0 l'ASCT 'w APTE'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T19:35:56Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'AR' correspondant \u00e0 l'ASCT 'e AR'"
+        },
+        {
+            "nomUce": "UCE_PU",
+            "secteurs": "'TL, TM' correspondant \u00e0 l'ASCT 'e TML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T19:40:01Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'AR' correspondant \u00e0 l'ASCT 'e AR'"
+        },
+        {
+            "nomUce": "UCE_PU",
+            "secteurs": "'TL, TM' correspondant \u00e0 l'ASCT 'e TML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T19:53:11Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMH'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "'UJ' correspondant \u00e0 l'ASCT 'e UJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_PU",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T19:54:31Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, TM' correspondant \u00e0 l'ASCT 'e ARML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "'AO, US' correspondant \u00e0 l'ASCT 'e AOUS'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T19:55:56Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T20:45:40Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'OT, RT, OY, OG' correspondant \u00e0 l'ASCT 'w ORGY '"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "'TH, TP, UK, UZ' correspondant \u00e0 l'ASCT 'w HPKZ '"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_TL",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T20:47:13Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'OT, RT, TH, TP, UK, OY, UZ, OG' correspondant \u00e0 l'ASCT 'w OPKZ '"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TN",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "'DO, S, DS, DG' correspondant \u00e0 l'ASCT 'e DOGS'"
+        },
+        {
+            "nomUce": "UCE_TL",
+            "secteurs": "'PW, UP, UT, UJ, TU, PU, HP, TW' correspondant \u00e0 l'ASCT 'e LMHJ'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T20:47:28Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'OT, RT, TH, TP, UK, OY, UZ, OG' correspondant \u00e0 l'ASCT 'w OPKZ '"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "'TL, AR, AO, TM, US' correspondant \u00e0 l'ASCT 'e AOML'"
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_TL",
+            "secteurs": "'PW, UP, UT, UJ, DO, S, DS, TU, PU, DG, HP, TW' correspondant \u00e0 l'ASCT 'e DGTJ'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T20:50:24Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "'OT, RT, TH, TP, UK, OY, UZ, OG' correspondant \u00e0 l'ASCT 'w OPKZ '"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_TL",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant \u00e0 l'ASCT 'e RPAE'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, AP' correspondant \u00e0 l'ASCT 'w AENB'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T21:59:34Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TB",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _TX, _OX' correspondant \u00e0 l'ASCT 'm PTO'"
+        },
+        {
+            "nomUce": "UCE_TL",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant \u00e0 l'ASCT 'e RPAE'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, OT, RT, TH, TP, UK, OY, UZ, OG, AP' correspondant \u00e0 l'ASCT 'w RPAW '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_VX, _UX' correspondant \u00e0 l'ASCT 'm VU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T22:06:02Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_M1",
+            "secteurs": "'_OX, _UX' correspondant \u00e0 l'ASCT 'm OU'"
+        },
+        {
+            "nomUce": "UCE_UT",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_UJ",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX' correspondant \u00e0 l'ASCT 'm PV'"
+        },
+        {
+            "nomUce": "UCE_AR",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_AO",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_SU",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_TM",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant \u00e0 l'ASCT 'e RPAE'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, OT, RT, TH, TP, UK, OY, UZ, OG, AP' correspondant \u00e0 l'ASCT 'w RPAW '"
+        },
+        {
+            "nomUce": "UCE_TH",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_OT",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_TP",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_TX' correspondant \u00e0 l'ASCT 'm TX'"
+        }
+    ]
+},{
+    "date": "2018-09-24T22:10:21Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_M1",
+            "secteurs": "'_OX, _UX' correspondant \u00e0 l'ASCT 'm OU'"
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "'_PX, _VX' correspondant \u00e0 l'ASCT 'm PV'"
+        },
+        {
+            "nomUce": "UCE_TL",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant \u00e0 l'ASCT 'e RPAE'"
+        },
+        {
+            "nomUce": "UCE_TM",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, OT, RT, TH, TP, UK, OY, UZ, OG, AP' correspondant \u00e0 l'ASCT 'w RPAW '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "'_TX' correspondant \u00e0 l'ASCT 'm TX'"
+        }
+    ]
+},{
+    "date": "2018-09-24T22:11:20Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_M1",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_M2",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_TL",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant \u00e0 l'ASCT 'e RPAE'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "'TN, TB, TE, OT, RT, TH, TP, UK, OY, UZ, OG, AP' correspondant \u00e0 l'ASCT 'w RPAW '"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_M3",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_CMCC_FERMEE",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T22:11:48Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TE",
+            "secteurs": "'TN, TB, TE, OT, RT, TH, TP, UK, OY, UZ, OG, AP' correspondant \u00e0 l'ASCT 'w RPAW '"
+        },
+        {
+            "nomUce": "UCE_TL",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant \u00e0 l'ASCT 'e RPAE'"
+        },
+        {
+            "nomUce": "UCE_AP",
+            "secteurs": "Aucun."
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_CMCC_FERMEE",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        }
+    ]
+},{
+    "date": "2018-09-24T22:12:28Z",
+    "confUce": []
+},{
+    "date": "2018-09-24T22:19:31Z",
+    "confUce": []
+},{
+    "date": "2018-09-24T22:24:27Z",
+    "confUce": []
+},{
+    "date": "2018-09-24T22:27:27Z",
+    "confUce": [
+        {
+            "nomUce": "UCE_TE",
+            "secteurs": "'TN, TB, TE, OT, RT, TH, TP, UK, OY, UZ, OG, AP' correspondant \u00e0 l'ASCT 'w RPAW '"
+        },
+        {
+            "nomUce": "UCE_TL",
+            "secteurs": "'PW, TL, UP, UT, UJ, AR, AO, DO, S, TM, DS, TU, PU, US, DG, HP, TW' correspondant \u00e0 l'ASCT 'e RPAE'"
+        },
+        {
+            "nomUce": "UCE_SIV",
+            "secteurs": "'IF' correspondant \u00e0 l'ASCT 'IF'"
+        },
+        {
+            "nomUce": "UCE_CMCC_FERMEE",
+            "secteurs": "'_PX, _VX, _TX, _OX, _UX' correspondant \u00e0 l'ASCT 'm PVTOU'"
+        }
+    ]
+}]

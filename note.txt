@@ -1,0 +1,4 @@
+Notes du projet LILAS relatives a GIT :
+Le fichier gitignore permet de ne pas commiter les fichier pycache (pyc). Ces fichiers sont utilisés par le moteur python, étant donné que Python est un langage interprété.
+Le fichier db.sqlite3 n'est pas commité non plus pendant la réalisation du projet.
+Il faudra néanmoins l'enlever du fichier gitignore pour que la base de données se commit aussi (à voir)

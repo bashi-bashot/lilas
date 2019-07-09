@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'configSalle/style.css' %}">
+        
+       <!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+        <link rel="stylesheet" href="{% static 'configSalle/lib_ext/datePicker.css' %}" />
+       
+        <title>LILAS</title>
+    </head>
+    <body>
+        <header>
+        <table style="width:100%;">
+            <tr>
+                <th> <h1>L I L A S</h1> </th>
+                <th class="boutonApp" onclick="window.location.href='/incident'">Tickets d'événements</th> 
+                <th class="boutonApp" onclick="window.location.href='/communication'">Tickets de communication</th>
+                <th class="boutonApp" onclick="window.location.href='/configSalle'" style="border-bottom: 5px solid #d3defc;">Tickets opérateurs</th>
+                <th class="boutonApp" onclick="window.location.href='/loadFic'"><img style="width: 30px; border-radius: 30px;" src="{% static 'loadFic/images/upload_icon.png' %}"></img></th>
+            </tr>
+        </table>
+        </header>
+        
+            <table>
+                <tr>
+                    <form action="." method="post" autocomplete="off">
+                        <th> 
+                                {% csrf_token %}
+                                <ul>
+                                    <li>Sélectionner la date : {{ form.date }}</li>
+                                </ul>
+                                
+                        </th>
+                        <th> <input type="submit" value="Valider"> </th>
+                    </form>
+                </tr>
+            </table>
+        
+       <div id = "alignMain">
+        {% if not bool %}
+        <div class = divConfUce>Configuration sélectionée : Aucune
+            <table id ='tabConfSelect'></table>
+           {% endif %}
+        </div>
+        <div id = "boutonMain">
+        <div class = dateTabBouton>
+           {% if date %}
+                Configurations de la salle du : {{ date }}
+           {% endif %}
+        </div>
+        <div class = uceBoutonConf >
+               {% if uceListe %}
+                    <table id = 'tableUceListe' hidden>
+                        {% for Uce in uceListe %}
+                            <tr>
+                                <td>{{ Uce.configurationSalle.date|date:"d/m/y_H:i:s" }}</td>
+                                <td>{{ Uce.nomUce }}</td>
+                                <td>{{ Uce.secteurs }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                        <div  class = divBouton>
+                    {% for ConfigurationSalle in confListe %} 
+                            <button class = boutonConf id='boutonConf' conf="{{ ConfigurationSalle.date|date:'d/m/y_H:i:s' }}"><div>Conf_{{ ConfigurationSalle.date|date:"d/m/y" }}</div><div>{{ ConfigurationSalle.date|date:"H:i:s" }}</div></button>
+                    {% endfor %}
+                        </div>
+                    
+               {% elif bool %}
+                   <p>Veuillez sélectionner une date.</p>
+               {% else %}
+                   <p><strong>Aucune configuration de salle répertoriée.</strong></p>
+               {% endif %}
+        </div>
+        </div>
+        </div>
+
+        <footer>
+        </footer>
+        
+        <script type="text/javascript">
+        
+//------ Test avec un Json (trop complexe pour l'utilisation souhaitée + pb securisation serveur ------//
+        
+        <!-- var uceName = '{{ uceListe.0.secteurs }}' -->
+        <!-- alert(uceName) -->
+       
+        <!-- var requestURL = "http://127.0.0.1:8000/configSalle/json/confs.json";        -->
+        
+        <!-- var request = new XMLHttpRequest(); -->
+        <!-- request.onreadystatechange = function() { -->
+            <!-- if (this.readyState == XMLHttpRequest.DONE && this.status == 200) { -->
+                <!-- var response = JSON.parse(this.responseText); -->
+                <!-- console.log(response.0.date); -->
+            <!-- } -->
+        <!-- }; -->
+        <!-- request.open("GET", requestURL); -->
+        <!-- request.send(); -->
+         
+//------ Fin Test avec Json ------//
+
+
+
+//------ Travail sur la solution de l'attribut hidden dans la balise ------//
+        
+            //On récupère le tableau de uceListe dans un tableau javascript
+        if (document.getElementById("tableUceListe")!=null)
+        {
+            var tableau = document.getElementById("tableUceListe").rows;
+            var longueur = tableau.length;
+            var tabUceListe = new Array();
+            
+            console.log(tableau[0].cells[0].innerHTML); 
+            
+            for (var i = 0; i < longueur; i++)
+            {
+                var ligne = tableau[i].cells;
+                var tampon = new Array();
+                for (var j = 0; j < 3; j++)
+                {
+                    tampon.push(ligne[j].innerHTML);
+                }
+                tabUceListe.push(tampon);
+            }
+        }
+            //tabUceListe est ici le tableau de conf des Uces. Il est rempli.
+            
+            
+            //----- CLIQUE BOUTON CONF_DATE -----//
+            
+        var boutonConf = document.getElementsByClassName('boutonConf');     //on récupère l'élément du boutonConf
+        var clickBoutonConf = function(){
+            var attribut = this.getAttribute('conf');
+            console.log("click bouton");
+            
+            // récupérer la référence du corps <div> qui nous intéresse          ref : https://developer.mozilla.org/fr/docs/Explorer_un_tableau_HTML_avec_des_interfaces_DOM_et_JavaScript
+            // afin déviter qu'un nouveau tableau soit créé à chaque 'click'
+            // on supprime le précédent
+            var bodyParent = document.getElementsByTagName("div")[1];
+            bodyParent.innerHTML = '<strong>Conf_'+attribut+'</strong><table id ="tabConfSelect"></table></div></div></div>';
+
+            var bodyChild = document.getElementsByTagName("table")[2];
+            // on supprime tout le contenu de l'élément en supprimant le bodyChild
+            bodyParent.removeChild(bodyChild);
+            bodyChild = document.createElement("table");
+            bodyParent.appendChild(bodyChild);
+            var body = document.getElementsByTagName("div")[1];
+            
+            // creation d'un elt <table>, cf. plus haut, d'un elt <thead> et d'un <tbody>
+            //var bodyChild = document.createElement("table");
+            var tblHead = document.createElement("thead");
+            var tblBody = document.createElement("tbody");
+            
+            // on détermine le nombre de ligne que composera notre tableau avec l'attribut conf
+            var tabConfOk = new Array();
+            for (var i=0; i<longueur; i++){
+                if ( tabUceListe[i][0] == attribut){
+                    tabConfOk.push(tabUceListe[i]);
+                }
+            }
+            var nbLignes=tabConfOk.length;
+            /*console.log(nbLignes);
+            console.log(tabConfOk[0]);*/
+                        
+            // on créé les cellules du tab dynamique
+            // on initialise la première ligne du tab dynamique avec 'Uce :' et 'Secteur(s) affecté(s) :'
+            var row = document.createElement("tr");
+            var cell = document.createElement("th");
+            var cellText = document.createTextNode("Uce(s) :");
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+
+            cell = document.createElement("th");
+            cellText = document.createTextNode("Secteur(s) affecté(s) :");
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            tblHead.appendChild(row);
+            
+            for (var i = 0; i < nbLignes; i++) {
+            // création des lignes
+                row = document.createElement("tr"); 
+
+                for (var j = 0; j < 2; j++) {
+                  // Create a <td> element and a text node, make the text
+                  // node the contents of the <td>, and put the <td> at
+                  // the end of the table row
+                  cell = document.createElement("td");
+                  cellText = document.createTextNode(tabConfOk[i][j+1]);
+                  cell.appendChild(cellText);
+                  row.appendChild(cell);
+                }
+
+            // add the row to the end of the table body
+            tblBody.appendChild(row);
+            }
+            
+            // on place le <thead> dans le <table>
+            bodyChild.appendChild(tblHead);
+            // put the <tbody> in the <table>
+            bodyChild.appendChild(tblBody);
+            // appends <table> into <div>
+            body.appendChild(bodyChild);
+            // sets the border attribute of bodyChild to 2;
+            bodyChild.setAttribute("id","tabConfSelect");
+        };
+        
+        Array.from(boutonConf).forEach(function(element){
+            element.addEventListener('click', clickBoutonConf);
+        });
+       
+        </script>
+        
+        
+        
+        <!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+        <script src="{% static 'configSalle/lib_ext/datePicker_jquery-1.12.4.js' %}"></script>
+        <script src="{% static 'configSalle/lib_ext/datePicker_jquery-ui.js' %}"></script>
+        <script src="{% static 'configSalle/lib_ext/datePicker_jquery-ui.min.js' %}"></script>
+    
+        <!-- NECESSAIRE A L'AFFICHAGE DU DATEPICKER -->
+        <script>
+            $(document).ready(function(){
+                $('#id_date').datepicker({ dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true,
+                showWeek: true,
+                firstDay: 1,
+                /*showOtherMonths: true,
+                selectOtherMonths: true*/ });
+            });
+        </script>
+        
+    </body>
+    
+
+</html>
