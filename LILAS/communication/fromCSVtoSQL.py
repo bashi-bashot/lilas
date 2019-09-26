@@ -16,7 +16,7 @@ def main():
     fic = open("communication/tickets_comm.csv", 'r')
     t = fic.readlines() #on stock dans t toutes les lignes du fichier de tickets --> Chaque ligne EST un ticket
     fic.close() #On ferme le flux
-    
+    print(t[0])
     u = [] #u est comme t, à la différence que chaque colonne est un champ du ticket
     
     for i in range(len(t)): #On parcourt tous les tickets ----- len(t)
