@@ -170,14 +170,14 @@ def createAppel(t, listeLif):
                 if num_appele == tabSecteurs[j].numero :
                     nomAppele = tabSecteurs[j].nom
                     
-            #On vérifie la ligne de tabAlias remplie :
+            #Si on a pas trouvé de correspondance, on recopie le numéro dans l'intitulé 
             if nomAppelant == "" :
                 nomAppelant = applant
                 
             if nomAppele == "" :
                 nomAppele = apple
                 
-            #On récupère maintenant les faisceaux à partir des lignes 
+            #On récupère maintenant "les faisceaux" à partir des lignes ATTENTION, il s'agiti ici de la LIF et non pas du faisceau
             #fsx_e est la ligne appelante de la forme "[VoIP] - 7H_3_VoIP"
             #fsx_a est la ligne appelee de la forme "[VoIP] - 7H_3_VoIP"
             
@@ -190,30 +190,27 @@ def createAppel(t, listeLif):
             indiceTiret = -1
             indiceFin = -1
             
-                #LIGNE - 1
+            #LIGNE - 1
             for i in range(len(ligne1)):
                 if ligne1[i] == '-' :
                     indiceTiret = i
                     break
             #l'indice i est '-', l'indice i+1 est ' ' et l'indice i+2 est le début de l'intitulé de la ligne
             # print("indiceTiret :"+str(indiceTiret))
+
             if(indiceTiret != -1):
-                ligne1 = ligne1[i+2:len(ligne1)]
-                ligne1 = ligne1.replace(" ", "")
-                for p in listeLif :
+                ligne1 = ligne1[i+2:len(ligne1)] #linge1 vaut la chaine exacte de la carte LIF
+                ligne1 = ligne1.replace(" ", "") #On enlève les espaces
+                for p in listeLif : #On cherche maintenant une correspondance dans nos LIFs
                     if p.nom == ligne1 :
                         faisceauAppelant = p.faisceau.nom
-                        # print("FAISCEAU TROUVE")
-                        break;
-                    # else :
-                        # print("p "+p.nom)
-                        # print("l "+ligne1+"plop")
+                        break
             else :
                 print("Erreur détermination LIF")
                 
                 
+            #LIGNE - 2
             indiceTiret = -1 #On réinitialise le marqueur
-                #LIGNE - 2
             for i in range(len(ligne2)):
                 if ligne2[i] == '-' :
                     indiceTiret = i
@@ -226,8 +223,7 @@ def createAppel(t, listeLif):
                 for p in listeLif :
                     if p.nom == ligne2 :
                         faisceauAppele = p.faisceau.nom
-                        # print("FAISCEAU TROUVE")
-                        break;
+                        break
             else :
                 print("Erreur détermination LIF")
                   
