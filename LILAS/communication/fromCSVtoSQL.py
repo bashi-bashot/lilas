@@ -7,6 +7,8 @@ from communication.models import *
 from django.conf import settings
 from datetime import datetime
 
+import time
+
 
 
 
@@ -16,7 +18,7 @@ def main():
     fic = open("communication/tickets_comm.csv", 'r')
     t = fic.readlines() #on stock dans t toutes les lignes du fichier de tickets --> Chaque ligne EST un ticket
     fic.close() #On ferme le flux
-    print(t[0])
+    #print(t[0])
     u = [] #u est comme t, à la différence que chaque colonne est un champ du ticket
     
     for i in range(len(t)): #On parcourt tous les tickets ----- len(t)
@@ -29,14 +31,26 @@ def createAppel(t, listeLif):
     #t=[appelant, appelé, date, type, durée, libération, line_appelante, line_appelee, etat, fsx_entrant, fsx_sortant, Commentaire(Debord Num ou SU+TP]
     #t=[27,       28,     23,   25,   calcul,        30,               ,             ,   29,         xxx,         xxx,                              31]
     
-    #On enlève les guillemets dans les chaines de caractères des tickets avec le [1:-1]
-    for k in range(len(t)): 
-        print(k)
-        #On crée un appel
+    tabExterieurs = NumExterieur.objects.all() #On récupère tous les numéros extérieurs
+    tabSecteurs = NumSecteur.objects.all() #On récupère tous les numéros de secteurs
+    
+    print("tabExterieurs : ")
+    print(len(tabExterieurs))
+
+    print("tabSecteurs : ")
+    print(len(tabSecteurs))
+    
+    
+    #for k in range(len(t)):
+    for k in range(len(t)):
+        #print(k)
+        
         #On récupère la date au champ 23
         texteDate = t[k][23].replace('"','')
         texteDateFin = t[k][24].replace('"','')
 
+        #-------------------------------------------------------------------------------------------
+        
         #On récupère le nom du joncteur et de l'appelant
         # str = t[k][27][1:-1].replace(" ","") # de la forme -->     Appelant : [PTEL] - EPOS_127              337070   Il faut doint enlever les espaces pour faire le traitement
         # applant = str[len(str)-6:len(str)] #ATTENTION Parfois, le numéro appelant est simplement 0. Si on récupère les 6 derniers caractères, on se retrouve avec un bout de joncteur. --> Si on trouve une lettre dans "appelant" alors il n'a a pas 6 numéros
@@ -44,6 +58,7 @@ def createAppel(t, listeLif):
 
         #Pour éviter ls problèmes dans le cas d'un numéro qui a moins de 6 chiffres, on peut faire le test suivant :
         #Si on rencontre plus de 5 espace à la fois --> Alors le premier caractère qui n'ets pas un espace qui suit est le premier chiffre du numéro de téléphone
+
         
         str = t[k][27].replace('"','')
         compteur_espace = 0
@@ -51,12 +66,16 @@ def createAppel(t, listeLif):
         for l in range(len(str)):
             if(str[l] == ' '):
                 compteur_espace = compteur_espace + 1
+
+                if(compteur_espace >= 4 ):
+                    #On est dans à l'indice d'un espace entre le joncteur et le numéro
+                    indice_separation = l+1
+                    break
+
             else:
                 compteur_espace = 0
             
-            if(compteur_espace >= 4 ):
-                #On est dans à l'indice d'un espace entre le joncteur et le numéro
-                indice_separation = l
+            
         
         l = indice_separation
         while (str[l] == ' '): 
@@ -66,6 +85,7 @@ def createAppel(t, listeLif):
                 applant = str[l:len(str)]
                 fsx_e = str[11:indice_separation-4]
         
+        #-------------------------------------------------------------------------------------------
         
         #On récupère le nom du joncteur et de l'appelé
         # str2 = t[k][28][1:-1].replace(" ","")
@@ -79,12 +99,16 @@ def createAppel(t, listeLif):
         for l in range(len(str2)):
             if(str2[l] == ' '):
                 compteur_espace = compteur_espace + 1
+
+                if(compteur_espace >= 4 ):
+                    #On est dans à l'indice d'un espace entre le joncteur et le numéro
+                    indice_separation = l+1
+                    break
+
             else:
                 compteur_espace = 0
             
-            if(compteur_espace >= 4 ):
-                #On est dans à l'indice d'un espace entre le joncteur et le numéro
-                indice_separation = l
+            
         
         l = indice_separation
         while (str2[l] == ' '): 
@@ -99,29 +123,27 @@ def createAppel(t, listeLif):
         
         d = datetime(int(texteDate[6:8])+2000,int(texteDate[3:5]),int(texteDate[0:2]),int(texteDate[9:11]),int(texteDate[12:14]),int(texteDate[15:17]))
         dfin = datetime(int(texteDateFin[6:8])+2000,int(texteDateFin[3:5]),int(texteDateFin[0:2]),int(texteDateFin[9:11]),int(texteDateFin[12:14]),int(texteDateFin[15:17]))
-      
+    
         if Appel.objects.filter(date__contains=d).filter(appelant__contains=apple).filter(line_appelante__contains=fsx_e).filter(appele__contains=applant).filter(line_appele__contains=fsx_a).count()==1:
-            print(d.__str__()+" "+applant+" "+apple)
+            print("Doublon :"+d.__str__()+" "+applant+" "+apple)
             pass
-        
+    
         else:
             dur = dfin - d #dur n'est pas un objet datetime, mais un objet timedelta
             
             #Traitemeent sur le champ "ETAT" du ticket : On ne regarde pas ce qui suit 'en'
             
             chaineTemoin = 'en'
-            
             chaineATraiter = t[k][29][17:-1]
-            
             etatAppel = ''
+            
             for i in range(len(chaineATraiter)-1):
                 if (chaineATraiter[i:i+2] == chaineTemoin):
                     etatAppel = chaineATraiter[0:i-1]
                     break
                     
             #On cherche maintenant le nom associé aux numéros dans les annuaires
-            tabExterieurs = NumExterieur.objects.all() #On récupère tous les numéros extérieurs
-            tabSecteurs = NumSecteur.objects.all() #On récupère tous les numéros de secteurs
+            
             
             num_appelant = applant
             num_appele = apple
@@ -130,7 +152,7 @@ def createAppel(t, listeLif):
             nomAppele=""
                     
                     
-            #On regarde si ces deux numéros apparaissent dans la liste des numéros extérieurs ou des numéros de secteurs
+            #On regarde si ces deux numéros apparaissent dans la liste des numéros extérieurs ou des numéros de secteurs (tabSecteurs et tabExterieurs sint intialisés en début de fonction)
             for j in range(len(tabExterieurs)):
                 if num_appelant == tabExterieurs[j].numero :
                     nomAppelant = tabExterieurs[j].nom
@@ -237,9 +259,16 @@ def createAppel(t, listeLif):
     
     
     #CODE QUE REALISE LE SCRIPT
+
+time1 = time.time()
 t = main()
 listeLif = LIF.objects.all() #Variable utilisée pour déterminer et référencer le faisceau par lequel passe un appel
 createAppel(t, listeLif)
+time2 = time.time()
+
+execution = time2 - time1
+print("DUREE D'EXECUTION : ")
+print(execution)
 
 
 # Commande shell manage.py : exec(open('communication/fromCSVtoSQL.py').read())
