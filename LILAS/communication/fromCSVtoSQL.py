@@ -8,6 +8,7 @@ from django.conf import settings
 from datetime import datetime
 
 import time
+import pytz
 
 
 
@@ -34,16 +35,12 @@ def createAppel(t, listeLif):
     tabExterieurs = NumExterieur.objects.all() #On récupère tous les numéros extérieurs
     tabSecteurs = NumSecteur.objects.all() #On récupère tous les numéros de secteurs
     
-    print("tabExterieurs : ")
-    print(len(tabExterieurs))
-
-    print("tabSecteurs : ")
-    print(len(tabSecteurs))
+    timzeone = pytz.timezone('UTC') #Définition de la zone horaire pour rendre la date aware
     
     
     #for k in range(len(t)):
     for k in range(len(t)):
-        #print(k)
+        print(k)
         
         #On récupère la date au champ 23
         texteDate = t[k][23].replace('"','')
@@ -123,7 +120,9 @@ def createAppel(t, listeLif):
         
         d = datetime(int(texteDate[6:8])+2000,int(texteDate[3:5]),int(texteDate[0:2]),int(texteDate[9:11]),int(texteDate[12:14]),int(texteDate[15:17]))
         dfin = datetime(int(texteDateFin[6:8])+2000,int(texteDateFin[3:5]),int(texteDateFin[0:2]),int(texteDateFin[9:11]),int(texteDateFin[12:14]),int(texteDateFin[15:17]))
-    
+        
+        d = timzeone.localize(d)
+        dfin = timzeone.localize(dfin)
         if Appel.objects.filter(date__contains=d).filter(appelant__contains=apple).filter(line_appelante__contains=fsx_e).filter(appele__contains=applant).filter(line_appele__contains=fsx_a).count()==1:
             print("Doublon :"+d.__str__()+" "+applant+" "+apple)
             pass
