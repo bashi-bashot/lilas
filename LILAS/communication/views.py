@@ -7,6 +7,8 @@ from .forms import NameForm
 from .forms import StatSelectForm
 from django import forms
 
+
+
 # from .forms import secteurListe
 
 
@@ -23,13 +25,11 @@ GLOB_TAB_SECT = [(1,"Tous secteurs")] #Variable qui sauvegarde les choix du spin
 GLOB_TAB_CORREXTE = [(1,"Tous les correspondants")] #Variable qui sauvegarde les choix du spinner correspondants dans formulaireDate
 
 
-
-
-
-
 #PENSER A CHANGER LES URLs POUR PASSER D'UNE METHODE A UNE AUTRE
 #Partie sans les vues génériques
 def index(request):
+    
+    #LISTE DE VARIABLES GLOBALES
     global GLOB_FORM_DATE #Formulaire où l'utilisateur choisit les dates entre lesquelles il veut afficher les appels
     global GLOB_FORM_STATISTIQUES #Formulaire où on choisit quelles statistiques affichées
     global GLOB_TAB_APPELS #Liste des appels affichés (ceux qui correspondent aux dates selectinnées
@@ -42,10 +42,8 @@ def index(request):
     tabExterieurs = NumExterieur.objects.all() #On récupère tous les numéros extérieurs
     tabSecteurs = NumSecteur.objects.all() #On récupère tous les secteurs
     tabNumExterieur = NumExterieur.objects.all()
+   
     
-    
-    
-    #LISTE DE VARIABLES GLOBALES
     listeDeTicket = []
     formulaireDates = NameForm(request.POST, choice_list_sect = GLOB_TAB_SECT, choice_list_corr = GLOB_TAB_CORREXTE)
     formulaireStatistiques = StatSelectForm(request.POST, )
@@ -53,13 +51,13 @@ def index(request):
     
     context = {'AppelListe':AppelListe, 'form':formulaireDates, 'statForm':formulaireStatistiques} 
     
-    if request.method == 'POST': #Si on a rempli un formulaire /!\ Chercher comment différencier les différents formulaire d'une même page /!\
-        #print("flag")
+    if request.method == 'POST': #Si on a rempli un formulaire 
+        
         if formulaireDates.is_valid(): #Si on a rempli le formulaire de choix de date / secteur / correspondant pour afficher les appels
             # process the data in form.cleaned_data as required
             
             print("FORMULAIRE DATE VALIDE")
-            AppelListe = Appel.objects.all()
+            #AppelListe = Appel.objects.all()
             dateDeb = formulaireDates.cleaned_data['dateDebut'] #On récupère la dete de début entrée dans le formulaire
             dateF = formulaireDates.cleaned_data['dateFin'] #On récupère la dete de fin entrée dans le formulaire
             
@@ -80,6 +78,12 @@ def index(request):
             GLOB_DATE_INIT = date_time_deb_aware
             GLOB_DATE_END = date_time_fin_aware
             
+            #------------------------------------------------------------------------------------------
+            listeDates = Appel.objects.filter(date__lt = date_time_fin_aware).filter(date__gt = date_time_deb_aware)
+            
+            #------------------------------------------------------------------------------------------
+            """
+            
             #On change la variable contexte à envoyer au html
             #On crée la liste d'appels à afficher
             listeDates = [] #Liste qu'on passe au contexte des appels à afficher sur la page
@@ -87,7 +91,8 @@ def index(request):
                 if (i.date > date_time_deb_aware) and (i.date < date_time_fin_aware) : #Si la date de l'appel est comprise entre les deux dates du formulaire
                     if(i.duree < 1000): #Si l'appelle a duré moins de 1000 secondes (S'il a duré plus, c'est que c'est un bug)
                         listeDates.append(i) #On ajoute l'appel à la fin de la liste
-                        
+            
+            """
             #LISTEDATES contient tous les appels correspondants aux dates séléctionnées.
             #On affine cette liste en fonction du spinner de séléction de secteur
             
