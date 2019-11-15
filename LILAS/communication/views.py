@@ -14,6 +14,7 @@ from django import forms
 
 from datetime import datetime
 import pytz
+import time
 
 GLOB_FORM_DATE = "XXX"
 GLOB_FORM_STATISTIQUES = "XXX"
@@ -28,6 +29,8 @@ GLOB_TAB_CORREXTE = [(1,"Tous les correspondants")] #Variable qui sauvegarde les
 #PENSER A CHANGER LES URLs POUR PASSER D'UNE METHODE A UNE AUTRE
 #Partie sans les vues génériques
 def index(request):
+    print("\n\n")
+   
     
     #LISTE DE VARIABLES GLOBALES
     global GLOB_FORM_DATE #Formulaire où l'utilisateur choisit les dates entre lesquelles il veut afficher les appels
@@ -51,12 +54,15 @@ def index(request):
     
     context = {'AppelListe':AppelListe, 'form':formulaireDates, 'statForm':formulaireStatistiques} 
     
+    
+    
     if request.method == 'POST': #Si on a rempli un formulaire 
         
         if formulaireDates.is_valid(): #Si on a rempli le formulaire de choix de date / secteur / correspondant pour afficher les appels
             # process the data in form.cleaned_data as required
             
             print("FORMULAIRE DATE VALIDE")
+            
             #AppelListe = Appel.objects.all()
             dateDeb = formulaireDates.cleaned_data['dateDebut'] #On récupère la dete de début entrée dans le formulaire
             dateF = formulaireDates.cleaned_data['dateFin'] #On récupère la dete de fin entrée dans le formulaire
@@ -78,21 +84,20 @@ def index(request):
             GLOB_DATE_INIT = date_time_deb_aware
             GLOB_DATE_END = date_time_fin_aware
             
+            
+            time1 = time.time()
+            print(time1)
             #------------------------------------------------------------------------------------------
-            listeDates = Appel.objects.filter(date__lt = date_time_fin_aware).filter(date__gt = date_time_deb_aware)
+            listeDates = Appel.objects.filter(date__lt = date_time_fin_aware).filter(date__gt = date_time_deb_aware).filter(duree__lt = 1000)
             
             #------------------------------------------------------------------------------------------
-            """
             
-            #On change la variable contexte à envoyer au html
-            #On crée la liste d'appels à afficher
-            listeDates = [] #Liste qu'on passe au contexte des appels à afficher sur la page
-            for i in AppelListe :
-                if (i.date > date_time_deb_aware) and (i.date < date_time_fin_aware) : #Si la date de l'appel est comprise entre les deux dates du formulaire
-                    if(i.duree < 1000): #Si l'appelle a duré moins de 1000 secondes (S'il a duré plus, c'est que c'est un bug)
-                        listeDates.append(i) #On ajoute l'appel à la fin de la liste
+            time2 = time.time()
+            print(time2)
+            print("Durée initialisation appels :")
+            delta = time2 - time1
+            print(delta)
             
-            """
             #LISTEDATES contient tous les appels correspondants aux dates séléctionnées.
             #On affine cette liste en fonction du spinner de séléction de secteur
             
