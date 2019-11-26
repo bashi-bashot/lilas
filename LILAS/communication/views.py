@@ -6,6 +6,7 @@ from django.views import generic
 from .forms import NameForm
 from .forms import StatSelectForm
 from django import forms
+from django.db.models import Q #Permet de faire des filtres complexes sur le queryset, notamment des OR.
 
 
 
@@ -108,18 +109,14 @@ def index(request):
             # print(choixSpinner[1])
             
             #Il faut maintenant affiner la liste listeDates pour n'afficher que les appels faisant intervenit le secteur choisi
-            
+            print(listeDates.count())
             
             if choixSpinner[1] != "Tous secteurs" : #Dans le cas contraire, on ne touche à rien 
             
-                listeIndex = [] #Contient la liste des indices à supprimer
-                for i in range(len(listeDates)) :
-                    if listeDates[i].nom_appelant != choixSpinner[1] and listeDates[i].nom_appele != choixSpinner[1] :
-                        listeIndex.append(i)
-            #On supprime les éléments de listedates dont les indices sont ceux de listeIndex
-                for i in range(len(listeIndex)-1, -1,-1):
-                    listeDates.pop(listeIndex[i])
-                    
+                listeDates = listeDates.filter(Q(nom_appelant=choixSpinner[1]) | Q(nom_appele=choixSpinner[1]))
+                
+                
+                                
                     
             #Il faut maintenant affiner la liste listeDates pour n'afficher que les appels faisant intervenit le correspondant exterieur choisi
                     
@@ -127,15 +124,10 @@ def index(request):
             choixSpinner_corr = formulaireDates.fields['correspondantSpinner'].choices[int(strCorr)-1]
                     
             if choixSpinner_corr[1] != "Tous les correspondants" : #Dans le cas contraire, on ne touche à rien 
-            
-                listeIndex = [] #Contient la liste des indices à supprimer
-                for i in range(len(listeDates)) :
-                    if listeDates[i].nom_appelant != choixSpinner_corr[1] and listeDates[i].nom_appele != choixSpinner_corr[1] :
-                        listeIndex.append(i)
-                        
-            #On supprime les éléments de listedates dont les indices sont ceux de listeIndex
-                for i in range(len(listeIndex)-1, -1,-1):
-                    listeDates.pop(listeIndex[i])
+
+                listeDates = listeDates.filter(Q(nom_appelant=choixSpinner_corr[1]) | Q(nom_appele=choixSpinner_corr[1]))
+
+
                     
             
             
