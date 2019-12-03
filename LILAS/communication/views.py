@@ -445,7 +445,7 @@ def index(request):
                             if appel.etat == 'NON_REPONSE' or appel.etat == 'DEST_OCCUPEE':
                                 listeStat[indice_entrant][4] = listeStat[indice_entrant][4] + 1 #REFUS
                                 
-                    if appel.fx_sortant != 'fx_xxxx_s' :
+                    if appel.fx_sortant != 'fx_xxxx_a' :
                         #On s'occupe de FX_SORTANT
                         if appel.fx_sortant not in listeFaisceaux :
                             listeStat.append([appel.fx_sortant])
