@@ -110,7 +110,7 @@ def index(request):
             
             #Il faut maintenant affiner la liste listeDates pour n'afficher que les appels faisant intervenit le secteur choisi
             print(listeDates.count())
-            
+    
             if choixSpinner[1] != "Tous secteurs" : #Dans le cas contraire, on ne touche à rien 
             
                 listeDates = listeDates.filter(Q(nom_appelant=choixSpinner[1]) | Q(nom_appele=choixSpinner[1]))
@@ -127,8 +127,6 @@ def index(request):
 
                 listeDates = listeDates.filter(Q(nom_appelant=choixSpinner_corr[1]) | Q(nom_appele=choixSpinner_corr[1]))
 
-
-                    
             
             
             #------------------- TABLEAU STATISTIQUES --------------------

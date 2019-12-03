@@ -5,6 +5,7 @@
 from incident.models import Incident
 from django.conf import settings
 from datetime import datetime
+import pytz
 
 
 
@@ -30,7 +31,7 @@ def traitementTicketIncident(tabIncidents):
     
     #Incident(type_element, nom_element, etat_element, gravite, date_apparition, date_disparition_systeme)
     #Incident(          16,          17,           18,      27,              28,                       30)
-    
+    timzeone = pytz.timezone('UTC')
     for p in range(len(tabIncidents)): #Tant qu'il y a des tickets
         
         #On récupère la date au champ 23

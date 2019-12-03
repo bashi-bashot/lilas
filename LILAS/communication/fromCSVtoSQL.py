@@ -8,9 +8,6 @@ from django.conf import settings
 from datetime import datetime
 
 import time
-import pytz
-
-
 
 
 
@@ -34,11 +31,11 @@ def createAppel(t, listeLif):
     
     tabExterieurs = NumExterieur.objects.all() #On récupère tous les numéros extérieurs
     tabSecteurs = NumSecteur.objects.all() #On récupère tous les numéros de secteurs
-    
+    import pytz #Import ici sinon, ça ne marche pas
     timzeone = pytz.timezone('UTC') #Définition de la zone horaire pour rendre la date aware
     
     
-    #for k in range(len(t)):
+    
     for k in range(len(t)):
         print(k)
         
