@@ -4,3 +4,4 @@ ELTS.csv
 *.pyc
 upload_*.txt
 upload_*.csv
+*.csv
