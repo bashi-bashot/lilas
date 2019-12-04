@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .forms import *
 
 # DEBUT import
-# INDISPENSABLE pour l'execution de chrgt_conf_salle_3_final
+# INDISPENSABLE pour l'execution de chrgt_conf_salle
 # on récupère ceux présents dans ce dernier
 from configSalle.models import Uce, ConfigurationSalle
 from django.conf import settings
@@ -97,7 +97,7 @@ def handle_uploaded_file_ope(f):
     for i in range(len(t)):
         destination.write(t[i])
     destination.close()
-    exec(open('configSalle/chrgt_conf_salle_3_final.py').read())
+    exec(open('configSalle/chrgt_conf_salle.py').read())
     
 def handle_uploaded_file_com(f):
     destination = open('communication/tickets_comm.csv', 'wb+')
