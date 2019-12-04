@@ -1,9 +1,17 @@
 from django.db import models
     
+
+class Date(models.Model):
+    date = models.DateField() 
+
+    def __str__(self):
+        return self.date.__str__()
+
 class Appel(models.Model):
     appelant = models.CharField(max_length=30) 
     appele = models.CharField(max_length=30)
-    date = models.DateTimeField() 
+    date = models.ForeignKey(Date, related_name='Appel', on_delete=models.CASCADE) 
+    heure = models.TimeField()
     type = models.CharField(max_length=30)
     duree =models.IntegerField()
     liberation = models.CharField(max_length=30)
@@ -21,6 +29,7 @@ class Appel(models.Model):
     
     def __str__(self):
         return self.appelant+", "+self.appele+", "+self.date.__str__()+", "+self.type+", "+str(self.duree)+"s"+","+str(self.SUTP)
+    
 
 class NumExterieur(models.Model):
     id_elts = models.CharField(max_length=4) #Maximum 99 999 numéros

@@ -31,7 +31,7 @@ def createAppel(t, listeLif):
     
     tabExterieurs = NumExterieur.objects.all() #On récupère tous les numéros extérieurs
     tabSecteurs = NumSecteur.objects.all() #On récupère tous les numéros de secteurs
-    import pytz #Import ici sinon, ça ne marche pas
+    import pytz #import ici sinon, ça ne marche pas
     timzeone = pytz.timezone('UTC') #Définition de la zone horaire pour rendre la date aware
     
     
@@ -120,7 +120,18 @@ def createAppel(t, listeLif):
         
         d = timzeone.localize(d)
         dfin = timzeone.localize(dfin)
-        if Appel.objects.filter(date__contains=d).filter(appelant__contains=apple).filter(line_appelante__contains=fsx_e).filter(appele__contains=applant).filter(line_appele__contains=fsx_a).count()==1:
+
+        #On crée la date de l'appel dans la table Date si elle n'existe pas
+        date_a_sauvegarder = Date(date = d.date())
+
+        if Date.objects.filter(date__contains=d.date()).count() == 1 :
+            date_a_sauvegarder = Date.objects.filter(date__contains=d.date())[0]
+        else :
+            
+            date_a_sauvegarder.save()
+
+        #if Appel.objects.filter(date__date__contains=d.date(), heure__contains=d.time(), appelant__contains=apple, line_appelante__contains=fsx_e, appele__contains=applant, line_appele__contains=fsx_a).count()==1:
+        if Appel.objects.filter(date__date__contains=d.date()).filter(heure__contains=d.time()).filter(appelant__contains=apple).filter(line_appelante__contains=fsx_e).filter(appele__contains=applant).filter(line_appele__contains=fsx_a).count()==1:
             print("Doublon :"+d.__str__()+" "+applant+" "+apple)
             pass
     
@@ -244,7 +255,7 @@ def createAppel(t, listeLif):
                     break
             
             
-            a = Appel(appelant=apple, appele= applant, date = d, type = t[k][25].replace('"',''),duree = int(dur.total_seconds()), liberation = t[k][30][14:-1].replace('"',''), line_appelante = fsx_e, line_appele = fsx_a, etat = etatAppel, nom_appele = nomAppelant , nom_appelant = nomAppele, fx_entrant = faisceauAppele, fx_sortant = faisceauAppelant, SUTP = sutp, SDA = numeris)
+            a = Appel(appelant=apple, appele= applant, date = date_a_sauvegarder, heure = d.time(), type = t[k][25].replace('"',''),duree = int(dur.total_seconds()), liberation = t[k][30][14:-1].replace('"',''), line_appelante = fsx_e, line_appele = fsx_a, etat = etatAppel, nom_appele = nomAppelant , nom_appelant = nomAppele, fx_entrant = faisceauAppele, fx_sortant = faisceauAppelant, SUTP = sutp, SDA = numeris)
             a.save()
       
     return 0

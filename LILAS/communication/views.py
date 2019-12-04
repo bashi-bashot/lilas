@@ -13,7 +13,7 @@ from django.db.models import Q #Permet de faire des filtres complexes sur le que
 # from .forms import secteurListe
 
 
-from datetime import datetime
+from datetime import *
 import pytz
 import time
 
@@ -84,13 +84,28 @@ def index(request):
             #On affecte les dates aux variables globales
             GLOB_DATE_INIT = date_time_deb_aware
             GLOB_DATE_END = date_time_fin_aware
-            
-            
             time1 = time.time()
-            print(time1)
             #------------------------------------------------------------------------------------------
-            listeDates = Appel.objects.filter(date__lt = date_time_fin_aware).filter(date__gt = date_time_deb_aware).filter(duree__lt = 1000)
+                     #CREATION DE LA LISTE D'APPEL QUI CORRESPOND AUX DATES ENTREES DANS LE FORMULAIRE
+            if (date_time_deb_aware.date() == date_time_fin_aware.date()) :
+                listeDates = Date.objects.filter(date__exact = date_time_deb_aware.date())[0].Appel.all() #Renvoie un queryset contenant tous les appels passés à la même date
+                listeDates = listeDates.filter(heure__lte = date_time_fin_aware.time(), heure__gte = date_time_deb_aware.time())
+                print("Selection des appels sur une seule journée")
             
+            else :
+                #On prend tous les jours pleins 
+                liste_de_dates = Date.filter(date__gte = date_time_deb_aware.date(), date__lte = date_time_fin_aware.date()) 
+                listeDates = liste_de_dates[0].Appel.all()
+                listeDates.filter(heure__gte = date_time_deb_aware.time())
+                
+                for m in range(1, liste_de_dates.count()-1):
+                    listeDates = listeDates | liste_de_dates[m].Appel.all()
+
+                QuerySetDateFinAppels =  liste_de_dates[liste_de_dates.count()].Appel.all()
+                QuerySetDateFinAppels.filter(heure__lte = date_time_fin_aware.time())
+
+                listeDates = listeDates|QuerySetDateFinAppels
+
             #------------------------------------------------------------------------------------------
             
             time2 = time.time()
