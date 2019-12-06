@@ -93,18 +93,27 @@ def index(request):
                 print("Selection des appels sur une seule journée")
             
             else :
-                #On prend tous les jours pleins 
-                liste_de_dates = Date.objects.filter(date__gte = date_time_deb_aware.date(), date__lte = date_time_fin_aware.date()) 
-                listeDates = liste_de_dates[0].Appel.all()
-                listeDates.filter(heure__gte = date_time_deb_aware.time())
+                
+                #On répertorie toutes les dates entrées (>= 2 grace au if)
+                liste_de_dates = Date.objects.filter(date__gte = date_time_deb_aware.date(), date__lte = date_time_fin_aware.date()) #Est une liste de dates
+
+
+                listeDates = liste_de_dates[0].Appel.all().filter(heure__gte = date_time_deb_aware.time())
+                
+                
                 
                 for m in range(1, liste_de_dates.count()-1):
                     listeDates = listeDates | liste_de_dates[m].Appel.all()
+                
+                listeDates = listeDates | liste_de_dates[liste_de_dates.count()-1].Appel.all().filter(heure__lte = date_time_fin_aware.time())
 
-                QuerySetDateFinAppels =  liste_de_dates[liste_de_dates.count()-1].Appel.all()
-                QuerySetDateFinAppels.filter(heure__lte = date_time_fin_aware.time())
+                
 
-                listeDates = listeDates|QuerySetDateFinAppels
+                #Pour le dernier jour, on ne prend que les appels passés avant l'heure de fin
+                #QuerySetDateFinAppels =  liste_de_dates[liste_de_dates.count()-1].Appel.all()
+                #QuerySetDateFinAppels.filter(heure__lte = date_time_fin_aware.time())
+
+                #listeDates = listeDates|QuerySetDateFinAppels
 
             #time2 = time.time()
             #print(time2)
