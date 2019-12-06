@@ -32,10 +32,24 @@
                         <th> 
                                 {% csrf_token %}
                                 <ul>
-                                    <div>Date initiale {{ form.dateDebut}} </div>
-                                    <div>Heure initiale {{ form.heureDebut }} (xx:xx:xx)</div>
-                                    <div>Date de fin {{ form.dateFin }}</div>
-                                    <div>Heure de fin {{ form.heureFin }} (xx:xx:xx)</div> 
+                                    <table>
+                                        <thead style="text-align: center"> <!-- En-tête du tableau -->
+                                            <tr>
+                                                <th>Début</th>
+                                                <th>Fin</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="text-align: right">
+                                            <tr>
+                                                <td>Date {{ form.dateDebut}} </td>
+                                                <td>Date {{ form.dateFin }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Heure {{ form.heureDebut }}</td>
+                                                <td>Heure {{ form.heureFin }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </ul>
                         </th>
                         <th> Séléction secteur {{ form.positionSpinner }}</th> 

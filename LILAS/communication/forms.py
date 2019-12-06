@@ -19,10 +19,10 @@ listeTypeStats = [
 
        
 class NameForm(forms.Form):
-    dateDebut = forms.DateField(label='Date de début : ', widget=widgets.AdminDateWidget(attrs={'size':10}))
-    heureDebut  = forms.CharField(label='Heure de début (xx:xx:xx)', max_length=8)
-    dateFin = forms.DateField(label='Date de fin : ', widget=widgets.AdminDateWidget(attrs={'size':10}))
-    heureFin  = forms.CharField(label='Heure de Fin (xx:xx:xx)', max_length=8)
+    dateDebut = forms.DateField(widget=widgets.AdminDateWidget(attrs={'size':10}))
+    heureDebut  = forms.CharField(max_length=8, widget=forms.TextInput(attrs={'size':10}))
+    dateFin = forms.DateField(widget=widgets.AdminDateWidget(attrs={'size':10}))
+    heureFin  = forms.CharField(max_length=8, widget=forms.TextInput(attrs={'size':10}))
     positionSpinner = forms.ChoiceField(widget = forms.Select(), choices = ())
     correspondantSpinner = forms.ChoiceField(label='Position : ', choices = ())
     
