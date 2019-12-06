@@ -131,21 +131,7 @@ def index(request):
                     
             strCorr = formulaireDates.cleaned_data['correspondantSpinner']
             choixSpinner_corr = formulaireDates.fields['correspondantSpinner'].choices[int(strCorr)-1]
-                    
-            if choixSpinner_corr[1] != "Tous les correspondants" : #Dans le cas contraire, on ne touche à rien 
-
-                listeDates = listeDates.filter(Q(nom_appelant=choixSpinner_corr[1]) | Q(nom_appele=choixSpinner_corr[1]))
-
-            
-            
-            #------------------- TABLEAU STATISTIQUES --------------------
-            #On s'occupe maintenant des statistiques à afficher
-            #Par défaut, au premier affichage des statistique, le spinner est positionné sur "Indifférent"
-            
-            listeStat = statistiquesIndifferent(listeDates)
-            #------------------- TABLEAU STATISTIQUES --------------------
-            
-            
+                   
             #------------------------------------------------------------------------------------------
                      #POPULATION DU MENU DEROULANT DANS LEQUEL ON CHOISIT LE SECTEUR
 
@@ -183,12 +169,11 @@ def index(request):
                 #listeSecteursSpinner[0] = listeSecteursSpinner[1]
                 #listeSecteursSpinner[1] = tamp
 
-                
+            
+           
+            #------------------------------------------------------------------------------------------
+                     #POPULATION DU MENU DEROULANT DANS LEQUEL ON CHOISIT LE CORRESPONDANT
 
-            
-            #------------------- SPINNER SECTEURS --------------------
-            
-            #------------------- SPINNER CORRESPONDANTS --------------------
             #Il faut maintenant construire le spinner du formulaire formulaireDates avec les correspondants qui apparaissent dans les appels aux dates séléctionnées
             listeCorrespondantSpinner = [(1,"Tous les correspondants")] #Contient tous les correspondants ayant été appelés / qui ont appelé sur la période séléctionnée FORMATE POUR LE SPINNER
             listeCorresp = [] #Contient tous les correspondants avec lesquels on va construire la suite du tuple précédent
@@ -217,21 +202,10 @@ def index(request):
                 p = (i+2, listeCorresp[i])
                 listeCorrespondantSpinner.append(p) #On a déjà le ((1,("Toute position"))). La suite continue à (2,...)
             
-            #------------------- SPINNER CORRESPONDANTS --------------------
-            
             GLOB_TAB_SECT = listeSecteursSpinner
             GLOB_TAB_CORREXTE = listeCorrespondantSpinner
             
-
-            if secteurSelectionne == 0 :
-                formulaireDates = NameForm(request.POST, choice_list_sect = GLOB_TAB_SECT, choice_list_corr = GLOB_TAB_CORREXTE)
-
-            else :
-                formulaireDates = NameForm(request.POST, choice_list_sect = GLOB_TAB_SECT, choice_list_corr = GLOB_TAB_CORREXTE)
-                formulaireDates.fields['positionSpinner'].initial=2
-                
-                print("positionSpinner.initial :")
-                print(formulaireDates.fields['positionSpinner'].initial)
+            formulaireDates = NameForm(request.POST, choice_list_sect = GLOB_TAB_SECT, choice_list_corr = GLOB_TAB_CORREXTE)
 
              #------------------------------------------------------------------------------------------
                     #AFFINAGE DE LA LISTE D'APPELS EN FONCTION DU -- SECTEUR -- ENREGISTRE
@@ -243,6 +217,18 @@ def index(request):
             
              #------------------------------------------------------------------------------------------
                     #AFFINAGE DE LA LISTE D'APPELS EN FONCTION DU -- CORRESPONDANT -- ENREGISTRE
+
+            if choixSpinner_corr[1] != "Tous les correspondants" : #Dans le cas contraire, on ne touche à rien 
+
+                listeDates = listeDates.filter(Q(nom_appelant=choixSpinner_corr[1]) | Q(nom_appele=choixSpinner_corr[1]))
+
+            #------------------------------------------------------------------------------------------
+                    #CREATION DU TABLEAU DE STATISTIQUES
+            #Par défaut, au premier affichage des statistique, le spinner est positionné sur "Indifférent"
+            
+            listeStat = statistiquesIndifferent(listeDates)
+            
+
             context = {'AppelListe':listeDates,'form':formulaireDates, 'statForm':formulaireStatistiques, 'ListeStats':listeStat} 
             
             #On sauvegarde le formulaire et les appels dans une variable globale
