@@ -23,7 +23,7 @@ class NameForm(forms.Form):
     heureDebut  = forms.CharField(label='Heure de début (xx:xx:xx)', max_length=8)
     dateFin = forms.DateField(label='Date de fin : ', widget=widgets.AdminDateWidget(attrs={'size':10}))
     heureFin  = forms.CharField(label='Heure de Fin (xx:xx:xx)', max_length=8)
-    positionSpinner = forms.ChoiceField(label='Position : ', choices = ())
+    positionSpinner = forms.ChoiceField(widget = forms.Select(), choices = ())
     correspondantSpinner = forms.ChoiceField(label='Position : ', choices = ())
     
     def __init__(self, *args, **kwargs): #Fonction appelée a chaque appel du formulaire dans le code python
@@ -32,7 +32,7 @@ class NameForm(forms.Form):
         
         choices=[(1,("Tous secteurs"))] #On initialise une variable par défaut pour le spinenr de secteur
         choices_corr = [(1, ("Tous les correspondants"))] #On initialise une variable par défaut pour le spinneur de correspondant
-        
+
         try:
             choices = kwargs.pop('choice_list_sect') #Si dans les kwargs (arguments donnés à l'appel de la classe) on a un élément de nom 'choice_list' alors on remplace la variable choices
         except KeyError:
@@ -42,11 +42,13 @@ class NameForm(forms.Form):
             choices_corr = kwargs.pop('choice_list_corr') #Si dans les kwargs (arguments donnés à l'appel de la classe) on a un élément de nom 'choice_list' alors on remplace la variable choices
         except KeyError:
             print("Liste de correspondants non initialisée [DateForm]")
-        
+       
         super(NameForm, self).__init__(*args, **kwargs)
         
         self.fields['correspondantSpinner'] = forms.ChoiceField(choices = choices_corr)
         self.fields['positionSpinner'] = forms.ChoiceField(choices = choices)
+        
+        
         
  
     

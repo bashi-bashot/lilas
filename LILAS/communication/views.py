@@ -94,46 +94,40 @@ def index(request):
             
             else :
                 #On prend tous les jours pleins 
-                liste_de_dates = Date.filter(date__gte = date_time_deb_aware.date(), date__lte = date_time_fin_aware.date()) 
+                liste_de_dates = Date.objects.filter(date__gte = date_time_deb_aware.date(), date__lte = date_time_fin_aware.date()) 
                 listeDates = liste_de_dates[0].Appel.all()
                 listeDates.filter(heure__gte = date_time_deb_aware.time())
                 
                 for m in range(1, liste_de_dates.count()-1):
                     listeDates = listeDates | liste_de_dates[m].Appel.all()
 
-                QuerySetDateFinAppels =  liste_de_dates[liste_de_dates.count()].Appel.all()
+                QuerySetDateFinAppels =  liste_de_dates[liste_de_dates.count()-1].Appel.all()
                 QuerySetDateFinAppels.filter(heure__lte = date_time_fin_aware.time())
 
                 listeDates = listeDates|QuerySetDateFinAppels
 
-            #------------------------------------------------------------------------------------------
-            
-            time2 = time.time()
-            print(time2)
-            print("Durée initialisation appels :")
-            delta = time2 - time1
-            print(delta)
+            #time2 = time.time()
+            #print(time2)
+            #print("Durée initialisation appels :")
+            #delta = time2 - time1
+            #print(delta)
             
             #LISTEDATES contient tous les appels correspondants aux dates séléctionnées.
             #On affine cette liste en fonction du spinner de séléction de secteur
             
-            strSecteur = formulaireDates.cleaned_data['positionSpinner']
-            
+            #------------------------------------------------------------------------------------------
+                     #RECUPERATION DU CHAMP DU MENU DEROULANT DE SELECTION DES SECTEURS
+
+            strSecteur = formulaireDates.cleaned_data['positionSpinner']   
             choixSpinner = formulaireDates.fields['positionSpinner'].choices[int(strSecteur)-1]
-            # print("Position spinner : ")
-            # print(choixSpinner[1])
             
             #Il faut maintenant affiner la liste listeDates pour n'afficher que les appels faisant intervenit le secteur choisi
-            print(listeDates.count())
-    
-            if choixSpinner[1] != "Tous secteurs" : #Dans le cas contraire, on ne touche à rien 
-            
-                listeDates = listeDates.filter(Q(nom_appelant=choixSpinner[1]) | Q(nom_appele=choixSpinner[1]))
+            #print(listeDates.count())
+            secteurSelectionne = 0 #Vaut 0 si le menu déroulant de secteur est poisitionné sur "Tous Secteurs" et vaut 1 sinon
+           
                 
-                
-                                
-                    
-            #Il faut maintenant affiner la liste listeDates pour n'afficher que les appels faisant intervenit le correspondant exterieur choisi
+            #------------------------------------------------------------------------------------------
+                     #RECUPERATION DU CHAMP DU MENU DEROULANT DE SELECTION DES CORRESONDANTS ET AFFINAGE DE LA LISTE D'APPELS
                     
             strCorr = formulaireDates.cleaned_data['correspondantSpinner']
             choixSpinner_corr = formulaireDates.fields['correspondantSpinner'].choices[int(strCorr)-1]
@@ -152,11 +146,14 @@ def index(request):
             #------------------- TABLEAU STATISTIQUES --------------------
             
             
-            #------------------- SPINNER SECTEURS --------------------
+            #------------------------------------------------------------------------------------------
+                     #POPULATION DU MENU DEROULANT DANS LEQUEL ON CHOISIT LE SECTEUR
+
             #Il faut maintenant construire le spinner du formulaire formulaireDates avec les secteur qui apparaissent dans les dates séléctionnées
             listeSecteursSpinner = [(1,"Tous secteurs")] #Contient tous les secteurs ayant été appelés / qui ont appelé sur la période séléctionnée FORMATE POUR LE SPINNER
+            
             listeSect = [] #Contient tous les secteurs avec lesquels on va construire la suite du tuple précédent
-           
+        
             for appel in listeDates :
                 appelant = appel.nom_appelant
                 appele = appel.nom_appele
@@ -180,7 +177,15 @@ def index(request):
             for i in range(len(listeSect)):
                 p = (i+2, listeSect[i])
                 listeSecteursSpinner.append(p) #On a déjà le ((1,("Toute position"))). La suite continue à (2,...)
+
+                #On échange les deux éléments pour que le menu déroulant affiche le secteur choisi
+                #tamp = listeSecteursSpinner[0]
+                #listeSecteursSpinner[0] = listeSecteursSpinner[1]
+                #listeSecteursSpinner[1] = tamp
+
                 
+
+            
             #------------------- SPINNER SECTEURS --------------------
             
             #------------------- SPINNER CORRESPONDANTS --------------------
@@ -216,11 +221,28 @@ def index(request):
             
             GLOB_TAB_SECT = listeSecteursSpinner
             GLOB_TAB_CORREXTE = listeCorrespondantSpinner
-            formulaireDates = NameForm(request.POST, choice_list_sect = GLOB_TAB_SECT, choice_list_corr = GLOB_TAB_CORREXTE)
             
+
+            if secteurSelectionne == 0 :
+                formulaireDates = NameForm(request.POST, choice_list_sect = GLOB_TAB_SECT, choice_list_corr = GLOB_TAB_CORREXTE)
+
+            else :
+                formulaireDates = NameForm(request.POST, choice_list_sect = GLOB_TAB_SECT, choice_list_corr = GLOB_TAB_CORREXTE)
+                formulaireDates.fields['positionSpinner'].initial=2
+                
+                print("positionSpinner.initial :")
+                print(formulaireDates.fields['positionSpinner'].initial)
+
+             #------------------------------------------------------------------------------------------
+                    #AFFINAGE DE LA LISTE D'APPELS EN FONCTION DU -- SECTEUR -- ENREGISTRE
+
+            if choixSpinner[1] != "Tous secteurs" : #Dans le cas contraire, on ne touche à rien 
             
-           
-         
+                listeDates = listeDates.filter(Q(nom_appelant=choixSpinner[1]) | Q(nom_appele=choixSpinner[1])) #On affine la liste d'appels
+                secteurSelectionne = 1
+            
+             #------------------------------------------------------------------------------------------
+                    #AFFINAGE DE LA LISTE D'APPELS EN FONCTION DU -- CORRESPONDANT -- ENREGISTRE
             context = {'AppelListe':listeDates,'form':formulaireDates, 'statForm':formulaireStatistiques, 'ListeStats':listeStat} 
             
             #On sauvegarde le formulaire et les appels dans une variable globale
@@ -234,6 +256,7 @@ def index(request):
         
         if formulaireStatistiques.is_valid():
             print("FORMULAIRE STATISTIQUES VALIDE")
+            GLOB_FORM_STATISTIQUES = formulaireStatistiques
             typeElement = formulaireStatistiques.cleaned_data['selectionTypeSpinner']
              
             listeStat = []
