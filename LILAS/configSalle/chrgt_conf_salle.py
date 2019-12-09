@@ -101,4 +101,4 @@ tickets = main()
 createConfiguration(tickets)
 
 
-# Commande shell manage.py : exec(open('configSalle/chrgt_conf_salle_3_final.py').read())
+# Commande shell manage.py : exec(open('configSalle/chrgt_conf_salle.py').read())

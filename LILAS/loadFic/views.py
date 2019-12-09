@@ -69,7 +69,7 @@ def index(request):
         # formOpe = UploadFileForm()
         # formCom = UploadFileForm()
         # formInc = UploadFileForm()
-        form = UploadFileForm()
+        # form = UploadFileForm() 
     
     return render(request, 'loadFic/index.html', context)
 
