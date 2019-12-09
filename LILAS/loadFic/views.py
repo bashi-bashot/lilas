@@ -40,23 +40,23 @@ def index(request):
             
             if 'fileConf' in request.FILES:
                 handle_uploaded_file_conf(request.FILES['fileConf'])
-                context['fileConf'] = request.FILES['fileConf']
+                context['fileConf'] = request.FILES['fileConf'].name
                 
             if 'fileSyst' in request.FILES:
                 handle_uploaded_file_syst(request.FILES['fileSyst'])
-                context['fileSyst'] = request.FILES['fileSyst']
+                context['fileSyst'] = request.FILES['fileSyst'].name
             
             if 'fileOpe' in request.FILES:
                 handle_uploaded_file_ope(request.FILES['fileOpe'])
-                context['fileOpe'] = request.FILES['fileOpe']
+                context['fileOpe'] = request.FILES['fileOpe'].name
 
             if 'fileCom' in request.FILES:
                 handle_uploaded_file_com(request.FILES['fileCom'])
-                context['fileCom'] = request.FILES['fileCom']
+                context['fileCom'] = request.FILES['fileCom'].name
                 
             if 'fileInc' in request.FILES:
                 handle_uploaded_file_inc(request.FILES['fileInc'])
-                context['fileInc'] = request.FILES['fileInc']
+                context['fileInc'] = request.FILES['fileInc'].name
                 
             return render(request, 'loadFic/upload_is_valid.html', context)
         
@@ -92,11 +92,16 @@ def handle_uploaded_file_syst(f):
     exec(open('communication/import_num_exterieurs_lif.py').read())
     
 def handle_uploaded_file_ope(f):
-    destination = open('configSalle/act_oper.csv', 'wb+')
-    t = f.readlines()
-    for i in range(len(t)):
-        destination.write(t[i])
-    destination.close()
+    with open('configSalle/act_oper.csv', 'wb+') as destination:
+        # en appelant la methode Uploadfil.chunks() au lieu de read(), on peut s’assurer que les gros fichiers ne saturent pas la mémoire du système.
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+    # destination = open('configSalle/act_oper.csv', 'wb+')
+    # t = f.readlines()
+    # for i in range(len(t)):
+    #     destination.write(t[i])
+    # destination.close()
     exec(open('configSalle/chrgt_conf_salle.py').read())
     
 def handle_uploaded_file_com(f):
