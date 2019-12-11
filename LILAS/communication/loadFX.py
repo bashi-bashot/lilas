@@ -1,10 +1,12 @@
 #Script qui charge les faisceaux et les lignes
 #Charge aussi certaines LIF qui interviennent dans les appels
 from communication.models import Faisceau, LIF
+from django.conf import settings
+
 
 
 def chargeFichier():
-    fic = open("communication/ELTS.csv", 'r')
+    fic = open(settings.MEDIA_ROOT+"/ELTS.csv", 'r')
     tab = fic.readlines()
     fic.close()
     return tab #Chaque élément de tab est une ligne de ELTS
@@ -55,7 +57,7 @@ for i in range(len(tabIndex)):
 
 print("indices des LIFS recuperes : "+str(len(tabIndexLif)))
 
-f = open("communication/CONF_SYSTEM.csv", 'r')
+f = open(settings.MEDIA_ROOT+"/CONF_SYSTEM.csv", 'r')
 tabLien = f.readlines()
 f.close()
 

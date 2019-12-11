@@ -1,8 +1,9 @@
 #Algorithme qui charge les numéros des lifs dans NumExterieur
 from communication.models import LIF, NumExterieur
+from django.conf import settings
 
 def chargeFichier():
-    fic = open("communication/ELTS.csv", 'r')
+    fic = open(settings.MEDIA_ROOT+"/ELTS.csv", 'r')
     tab = fic.readlines()
     fic.close()
     return tab
