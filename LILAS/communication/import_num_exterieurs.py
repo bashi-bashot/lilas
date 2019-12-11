@@ -1,8 +1,10 @@
 #Algorithme qui charge en base de donnée les numéros extérieurs au CRNA.
 from communication.models import NumExterieur
+from django.conf import settings
+
 
 def chargeFichier():
-    fic = open("communication/ELTS.csv", 'r')
+    fic = open(settings.MEDIA_ROOT+"/ELTS.csv", 'r')
     tab = fic.readlines()
     fic.close()
     return tab

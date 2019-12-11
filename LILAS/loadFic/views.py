@@ -74,16 +74,14 @@ def index(request):
     return render(request, 'loadFic/index.html', context)
 
 def handle_uploaded_file_conf(f):
-    destination = open('communication/ELTS.csv', 'wb+')
-    t = f.readlines()
-    for i in range(len(t)):
-        destination.write(t[i])
-    destination.close()
+    with open(settings.MEDIA_ROOT+'/ELTS.csv', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
     exec(open('communication/import_num_exterieurs.py').read())
     exec(open('communication/import_num_secteurs.py').read())
 
 def handle_uploaded_file_syst(f):
-    destination = open('communication/CONF_SYSTEM.csv', 'wb+')
+    destination = open(settings.MEDIA_ROOT+'/CONF_SYSTEM.csv', 'wb+')
     t = f.readlines()
     for i in range(len(t)):
         destination.write(t[i])
@@ -105,19 +103,15 @@ def handle_uploaded_file_ope(f):
     exec(open('configSalle/chrgt_conf_salle.py').read())
     
 def handle_uploaded_file_com(f):
-    destination = open('communication/tickets_comm.csv', 'wb+')
-    t = f.readlines()
-    for i in range(len(t)):
-        destination.write(t[i])
-    destination.close()
+    with open(settings.MEDIA_ROOT+'/tickets_comm.csv', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
     exec(open('communication/fromCSVtoSQL.py').read())
     
 def handle_uploaded_file_inc(f):
-    destination = open('incident/tickets_incidents.csv', 'wb+')
-    t = f.readlines()
-    for i in range(len(t)):
-        destination.write(t[i])
-    destination.close()
+    with open(settings.MEDIA_ROOT+'/tickets_incidents.csv', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
     exec(open('incident/chargement_conf_incidents.py').read())
     
     
