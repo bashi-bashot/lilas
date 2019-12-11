@@ -20,9 +20,9 @@ listeTypeStats = [
        
 class NameForm(forms.Form):
     dateDebut = forms.DateField(widget=widgets.AdminDateWidget(attrs={'size':10}))
-    heureDebut  = forms.CharField(max_length=8, widget=forms.TextInput(attrs={'size':10}))
+    heureDebut  = forms.CharField(max_length=8, widget=forms.TextInput(attrs={'size':10, 'placeholder': 'hh:mm:ss'}))
     dateFin = forms.DateField(widget=widgets.AdminDateWidget(attrs={'size':10}))
-    heureFin  = forms.CharField(max_length=8, widget=forms.TextInput(attrs={'size':10}))
+    heureFin  = forms.CharField(max_length=8, widget=forms.TextInput(attrs={'size':10, 'placeholder': 'hh:mm:ss'}))
     positionSpinner = forms.ChoiceField(widget = forms.Select(), choices = ())
     correspondantSpinner = forms.ChoiceField(label='Position : ', choices = ())
     
@@ -47,6 +47,12 @@ class NameForm(forms.Form):
         
         self.fields['correspondantSpinner'] = forms.ChoiceField(choices = choices_corr)
         self.fields['positionSpinner'] = forms.ChoiceField(choices = choices)
+
+    def clean_heureDebut(self):
+        strHeure = self.cleaned_data['heureDebut']
+        if (strHeure[2] != ':' or strHeure[5] != ':'):
+            raise forms.ValidationError("L'Heure n'est pas au format hh:mm:ss.")
+        return strHeure
         
         
         
