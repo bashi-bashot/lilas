@@ -92,7 +92,7 @@ def handle_uploaded_file_syst(f):
     exec(open('communication/import_num_exterieurs_lif.py').read())
     
 def handle_uploaded_file_ope(f):
-    with open('configSalle/act_oper.csv', 'wb+') as destination:
+    with open(settings.MEDIA_ROOT+'/act_oper.csv', 'wb+') as destination:
         # en appelant la methode Uploadfil.chunks() au lieu de read(), on peut s’assurer que les gros fichiers ne saturent pas la mémoire du système.
         for chunk in f.chunks():
             destination.write(chunk)

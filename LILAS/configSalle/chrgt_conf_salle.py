@@ -9,7 +9,7 @@ import os
 
 def main():
     #On ouvre le fichier contenant les tickets
-    fic = open("configSalle/act_oper.csv", 'r')
+    fic = open(settings.MEDIA_ROOT+"/act_oper.csv", 'r')
     t = fic.readlines() #on stock dans t toutes les lignes du fichier de tickets
     fic.close() #On ferme le flux
 
