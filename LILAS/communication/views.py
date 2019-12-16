@@ -247,6 +247,8 @@ def index(request):
             
             # redirect to a new URL:
             return render(request, 'communication/index.html', context) #On recharge la page
+
+        
         
         
         if formulaireStatistiques.is_valid():

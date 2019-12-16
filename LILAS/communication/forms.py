@@ -51,7 +51,7 @@ class NameForm(forms.Form):
     def clean_heureDebut(self):
         strHeure = self.cleaned_data['heureDebut']
         if (strHeure[2] != ':' or strHeure[5] != ':'):
-            raise forms.ValidationError("L'Heure n'est pas au format hh:mm:ss.")
+            raise forms.ValidationError("Format : hh:mm:ss.", code="invalid format")
         return strHeure
         
         

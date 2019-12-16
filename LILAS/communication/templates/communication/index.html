@@ -48,8 +48,17 @@
                                                 <td>Heure {{ form.heureDebut }}</td>
                                                 <td>Heure {{ form.heureFin }}</td>
                                             </tr>
+                                            <tr>
+                                                <td>
+                                                    {% if form.heureDebut.errors %}
+                                                    {{ form.heureDebut.errors }}
+                                                    {% endif%} 
+                                                    
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
+                                    
                                 </ul>
                         </th>
                         <th> Séléction secteur {{ form.positionSpinner }}</th> 
