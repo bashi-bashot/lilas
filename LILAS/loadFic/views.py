@@ -15,6 +15,9 @@ from incident.models import Incident
 # INDISPENSABLE pour l'execution de communication
 from communication.models import *
 
+# Exception Erreur du Format pour le fichier Upload
+from .exception import *
+
 
 def index(request):
         
@@ -47,8 +50,19 @@ def index(request):
                 context['fileSyst'] = request.FILES['fileSyst'].name
             
             if 'fileOpe' in request.FILES:
-                handle_uploaded_file_ope(request.FILES['fileOpe'])
-                context['fileOpe'] = request.FILES['fileOpe'].name
+
+                try:
+                    test_format(request.FILES['fileOpe'])
+                except FormatError as e:
+                    print('Pb Format :', e.format)
+
+                else:
+                    print('\n\n\n****************')
+                    print('test valid')
+                    print('****************\n\n\n')
+                    handle_uploaded_file_ope(request.FILES['fileOpe'])
+                    context['fileOpe'] = request.FILES['fileOpe'].name
+
 
             if 'fileCom' in request.FILES:
                 handle_uploaded_file_com(request.FILES['fileCom'])
@@ -57,8 +71,12 @@ def index(request):
             if 'fileInc' in request.FILES:
                 handle_uploaded_file_inc(request.FILES['fileInc'])
                 context['fileInc'] = request.FILES['fileInc'].name
-                
-            return render(request, 'loadFic/upload_is_valid.html', context)
+
+            if len(context)>1:
+                print('\n\n\n****************')
+                print(len(context))
+                print('****************\n\n\n')    
+                return render(request, 'loadFic/upload_is_valid.html', context)
         
         else:
             print('no form valid')
