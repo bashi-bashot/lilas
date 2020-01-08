@@ -15,7 +15,8 @@
 
 html
 {
-   font-family: Calibri; 
+   font-family: Calibri;
+   cursor: default;
 }
 
 header

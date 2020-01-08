@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import *
+import pytz
 
 # DEBUT import
 # INDISPENSABLE pour l'execution de chrgt_conf_salle
@@ -20,19 +21,11 @@ from .exception import *
 
 
 def index(request):
-        
-    # formConf = UploadFileForm(request.POST, request.FILES)
-    # formSyst = UploadFileForm(request.POST, request.FILES)
-    # formOpe = UploadFileForm(request.POST, request.FILES)
-    # formCom = UploadFileForm(request.POST, request.FILES)
-    # formInc = UploadFileForm(request.POST, request.FILES)  
     
     form = UploadFileForm(request.POST, request.FILES)
     
-    # context = {'formConf': formConf, 'formSyst': formSyst, 'formOpe' : formOpe, 'formCom' : formCom, 'formInc' : formInc}
     context = {'form':form}
-    
-    
+    context['fileOpeError'] = False  
     
     if request.method == 'POST':
         print('post ok')
@@ -55,13 +48,15 @@ def index(request):
                     test_format(request.FILES['fileOpe'])
                 except FormatError as e:
                     print('Pb Format :', e.format)
+                    context['fileOpeError'] = e.format
+                    print(context['fileOpeError'])
 
                 else:
                     print('\n\n\n****************')
                     print('test valid')
                     print('****************\n\n\n')
                     handle_uploaded_file_ope(request.FILES['fileOpe'])
-                    context['fileOpe'] = request.FILES['fileOpe'].name
+                    context['fileOpe'] = request.FILES['fileOpe']
 
 
             if 'fileCom' in request.FILES:
@@ -72,7 +67,7 @@ def index(request):
                 handle_uploaded_file_inc(request.FILES['fileInc'])
                 context['fileInc'] = request.FILES['fileInc'].name
 
-            if len(context)>1:
+            if len(context)>2:
                 print('\n\n\n****************')
                 print(len(context))
                 print('****************\n\n\n')    
@@ -83,12 +78,7 @@ def index(request):
         
     else:
         print('no post') 
-        # formConf = UploadFileForm()
-        # formOpe = UploadFileForm()
-        # formCom = UploadFileForm()
-        # formInc = UploadFileForm()
-        # form = UploadFileForm() 
-    
+
     return render(request, 'loadFic/index.html', context)
 
 def handle_uploaded_file_conf(f):

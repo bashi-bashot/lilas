@@ -15,7 +15,7 @@ def recupFichier():
     La première correspond à un ticket et la deuxième correspond à chaque élément du ticket.
     """
     #On ouvre le fichier contenant els tickets
-    fic = open("incident/tickets_incidents.csv", 'r')
+    fic = open("temp_media/tickets_incidents.csv", 'r')
     t = fic.readlines() #on stock dans t toutes les lignes du fichier de tickets --> Chaque ligne EST un ticket
     fic.close() #On ferme le flux
     
