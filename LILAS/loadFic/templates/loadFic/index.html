@@ -28,50 +28,127 @@
             <input type="button" onclick="window.location.href='/admin'" value="Panneaux d'administration" style='padding: 0.5em;' >
         </div>
         <div id = "formulaire" style='margin-left: 10em; margin-top: 10em;'>
-            <p><strong>Formulaires Transferts de Fichier(s):</strong></p>
-            <form action="." method="post"  enctype="multipart/form-data">
+            <p><b>Formulaires Transferts de Fichier(s):</b></p>
+            <form id="myForm" action="." method="post"  enctype="multipart/form-data">
                 {% csrf_token %}
                 <ul>
-                    <li>Sélectionner le <strong>ELTS .csv</strong> de la nouvelle configuration ARTEMIS: {{ form.fileConf }}</li>
-                    <li>Sélectionner le <strong>CONF_SYSTEM .csv</strong> de la nouvelle configuration ARTEMIS: {{ form.fileSyst }}</li>
-                    <li>Sélectionner les <strong>tickets opérateurs .csv</strong>: {{ form.fileOpe }}</li>
-                    <li>Sélectionner les <strong>tickets communications .csv</strong>: {{ form.fileCom }}</li>
-                    <li>Sélectionner les <strong>tickets incidents .csv</strong>: {{ form.fileInc }}</li>
-                    <p><input type="submit" value="Valider" id='upload'></p>
+                    <li>Sélectionner le <b>ELTS .csv</b> de la nouvelle configuration ARTEMIS: {{ form.fileConf }}<button class='reset' id='resetConf'>&#10006;</button></li>
+                    <li>Sélectionner le <b>CONF_SYSTEM .csv</b> de la nouvelle configuration ARTEMIS: {{ form.fileSyst }}<button class='reset' id='resetSyst'>&#10006;</button></li>
+                    <li>Sélectionner les <b>tickets opérateurs .csv</b>: {{ form.fileOpe }}<button class='reset' id='resetOpe'>&#10006;</button>
+                        {% if fileOpeError %}
+                                <li class="errorlist"><b>{{ fileOpeError }}</b></li>
+                        {% endif %}
+                    </li>
+                    <li>Sélectionner les <b>tickets communications .csv</b>: {{ form.fileCom }}<button class='reset' id='resetCom'>&#10006;</button></li>
+                    <li>Sélectionner les <b>tickets incidents .csv</b>: {{ form.fileInc }}<button class='reset' id='resetInc'>&#10006;</button></li>
+                    <p><input type="submit" value="Valider" id="upload"></p>
                     
-                    <p id='mySpinner'><p hidden>En attente de validation</></p>
+                    <p id='mySpinner'><p hidden>En attente de validation</p></p>
                     
                 </ul>
             </form>
-            
-            <!-- <form action="." method="post"  enctype="multipart/form-data"> -->
-                <!-- {% csrf_token %} -->
-                <!-- <ul> -->
-                    <!-- <li>Sélectionner les tickets opérateurs .csv: {{ formOpe.file }}<input type="submit" value="Valider"></li> -->
-                <!-- </ul> -->
-            <!-- </form> -->
-            
-            <!-- <form action="." method="post"  enctype="multipart/form-data"> -->
-                <!-- {% csrf_token %} -->
-                <!-- <ul> -->
-                    <!-- <li>Sélectionner les tickets communications .csv: {{ formCom.file }}<input type="submit" value="Valider"></li> -->
-                <!-- </ul> -->
-            <!-- </form> -->
-            
-            <!-- <form action="." method="post"  enctype="multipart/form-data"> -->
-                <!-- {% csrf_token %} -->
-                <!-- <ul> -->
-                    <!-- <li>Sélectionner les tickets incidents .csv: {{ formInc.file }}<input type="submit" value="Valider"></li> -->
-                <!-- </ul> -->
-            <!-- </form> -->
         </div>
         
         <script>
-        document.getElementById("upload").addEventListener("click", mySpinner);
-        
-        function mySpinner() {
-            var bodyParent = document.getElementsByTagName("p")[2];
-            bodyParent.innerHTML = "<div id='loader'></div>Upload in Progress";
+        var elmt = document.getElementById('upload');   //desactivation du boutton "valider" au lancement de la page
+        elmt.disabled = true;           
+
+        var formFilled = setInterval(function() {
+            var valFileConf = document.getElementById('id_fileConf').value;
+            var valFileSyst = document.getElementById('id_fileSyst').value;
+            var valFileOpe = document.getElementById('id_fileOpe').value;
+            var valFileCom = document.getElementById('id_fileCom').value;
+            var valFileInc = document.getElementById('id_fileInc').value;
+
+            if (valFileConf=="" && valFileSyst=="" && valFileOpe=="" && valFileCom=="" && valFileInc=="") {
+                var elmt = document.getElementById('upload');   //desactivation du boutton "valider" tant qu'aucun champ n'est rempli
+                elmt.disabled = true;
+                var buttons = document.getElementsByClassName('reset');
+                buttons.style.visibility = 'hdden';
+            
+            } else {
+                var elmt = document.getElementById('upload');   //activation du boutton "valider" lorsqu'un champ est rempli
+                elmt.disabled = false;
+
+                if (valFileConf!="") {
+                    var button = document.getElementById('resetConf');
+                    button.style.visibility = "visible";
+                }
+
+                if (valFileSyst!="") {
+                    var button = document.getElementById('resetSyst');
+                    button.style.visibility = "visible";
+                }
+
+                if (valFileOpe!="") {
+                    var button = document.getElementById('resetOpe');
+                    button.style.visibility = "visible";
+                }
+
+                if (valFileCom!="") {
+                    var button = document.getElementById('resetCom');
+                    button.style.visibility = "visible";
+                }
+            
+                if (valFileInc!="") {
+                    var button = document.getElementById('resetInc');
+                    button.style.visibility = "visible";
+                }
+            };
+        }, 100); //test effectué toutes les 100ms
+
+
+
+        document.getElementById("myInc").addEventListener("click", myReset);
+        function myReset() {
+            document.getElementById('id_fileConf').value="";
+            document.getElementById('id_fileSyst').value="";
+            document.getElementById('id_fileOpe').value="";
+            document.getElementById('id_fileCom').value="";
+            document.getElementById('id_fileInc').value="";
+        };
+
+        document.getElementById("upload").addEventListener("click", myUpload);
+        function myUpload() {
+
+            clearInterval(formFilled);      //arret du test sur le remplissage du formulaire
+
+            var bodyParent = document.getElementsByTagName("p")[2];     //visualisation du televersement via un spinner en mouvement
+            bodyParent.innerHTML = "<p><div id='loader'></div>Upload in Progress</p>";
+
+            var elmt = document.getElementsByTagName('html')[0];    //visualisation du televersement via un curseur souris en mouvement
+            elmt.style.cursor = "wait";
+            
+            elmt = document.getElementById('upload');   //desactivation du boutton "valider" pdt le televersement
+            elmt.style.cursor = "wait";
+            elmt.disabled = true;
+
+            elmt = document.getElementById('reset');   //desactivation du boutton "annuler" pdt le televersement
+            elmt.style.cursor = "wait";
+            elmt.disabled = true;
+
+            setTimeout(function(){  //desactivation des formulaires pdt le televersement
+
+                elmt = document.getElementById('id_fileConf');
+                elmt.style.cursor = "wait";
+                elmt.disabled = true;
+                elmt = document.getElementById('id_fileSyst');
+                elmt.style.cursor = "wait";
+                elmt.disabled = true;
+                elmt = document.getElementById('id_fileOpe');
+                elmt.style.cursor = "wait";
+                elmt.disabled = true;
+                elmt = document.getElementById('id_fileCom');
+                elmt.style.cursor = "wait";
+                elmt.disabled = true;
+                elmt = document.getElementById('id_fileInc');
+                elmt.style.cursor = "wait";
+                elmt.disabled = true;
+
+                alert("[ ATTENTION ]\n\n\nNe pas actualiser cette page web lors du téléversement des fichiers.")
+                
+            }, 100);  //100ms necessaires afin de laisser le temps au server de lancer le televersement
+
         };
         </script>
         
