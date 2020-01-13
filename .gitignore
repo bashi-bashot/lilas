@@ -5,3 +5,4 @@ ELTS.csv
 upload_*.txt
 upload_*.csv
 *.csv
+venv/
