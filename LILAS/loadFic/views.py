@@ -25,7 +25,7 @@ def index(request):
     form = UploadFileForm(request.POST, request.FILES)
     
     context = {'form':form}
-    context['fileOpeError'] = False  
+    context['fileOpeError'] = False
     
     if request.method == 'POST':
         print('post ok')

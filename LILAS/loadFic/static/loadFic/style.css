@@ -47,7 +47,7 @@ form li
     margin: 1em;
 }
 
-button.reset
+.reset
 { 
     visibility: hidden;
     background:none;
@@ -55,7 +55,7 @@ button.reset
     color: grey;
 }
 
-button.reset:hover
+.reset:hover
 { 
     background:none;
     border:none;
