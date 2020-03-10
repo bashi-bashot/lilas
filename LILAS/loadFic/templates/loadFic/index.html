@@ -28,34 +28,11 @@
             <input id="adminPanel" type="button" onclick="window.location.href='/admin'" value="Panneaux d'administration" style='padding: 0.5em;' >
         </div>
         <div id = "formulaire" style='margin-left: 10em; margin-top: 10em;'>
-            <p><b>Formulaires Transferts de Fichier(s):</b></p>
-            <tr>
-                <th>
-                    <form id="myForm" action="." method="post"  enctype="multipart/form-data">
-                        {% csrf_token %}
+            <!-- <p><b>Formulaires Transferts de Fichier(s):</b></p> -->
+                <form id="myForm" action="." method="post"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset><legend>Téléversement des Tickets ARTEMIS - TPH</legend>
                         <ul>
-                            <li>Selectionner le <b>ELTS .csv</b> de la nouvelle configuration ARTEMIS: {{ form.fileConf }}<input type='button' class='reset' id='resetConf' value='&#10006;'/>
-                                {% if fileEltsError %}
-                                <p>
-                                    <div class="errorfile">
-                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                                    <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileEltsError }}
-                                    </div>
-                                </p>
-                                {% endif %}
-                            </li>
-                            <li>Selectionner le <b>CONF_SYSTEM .csv</b> de la nouvelle configuration ARTEMIS: {{ form.fileSyst }}<input type='button' class='reset' id='resetSyst' value='&#10006;'/>
-                                {% if fileSystError %}
-                                <p>
-                                    <div class="errorfile">
-                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                                    <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileSystError }}
-                                    </div>
-                                </p>
-                                {% endif %}
-                            </li>
-                </th>
-                <th>
                             <li>Selectionner les <b>tickets operateurs .csv</b>: {{ form.fileOpe }}<input type='button' class='reset' id='resetOpe' value='&#10006;'/>
                                 {% if fileOpeError %}
                                     <p>
@@ -86,14 +63,36 @@
                                     </p>
                                 {% endif %}
                             </li>
-                </th>            
-                            <p><input type="submit" value="Valider" id="upload"></p>
-                            
-                            <p id='mySpinner'><p hidden>En attente de validation</p></p>
-                            
                         </ul>
-                    </form>
-            </tr>
+                    </fieldset>
+                    <fieldset style="margin-top: 90px;"><legend>Téléversement des Fichiers de Configuration</legend>
+                        <ul>
+                            <li>Selectionner le <b>ELTS .csv</b> de la nouvelle configuration ARTEMIS: {{ form.fileConf }}<input type='button' class='reset' id='resetConf' value='&#10006;'/>
+                                {% if fileEltsError %}
+                                <p>
+                                    <div class="errorfile">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileEltsError }}
+                                    </div>
+                                </p>
+                                {% endif %}
+                            </li>
+                            <li>Selectionner le <b>CONF_SYSTEM .csv</b> de la nouvelle configuration ARTEMIS: {{ form.fileSyst }}<input type='button' class='reset' id='resetSyst' value='&#10006;'/>
+                                {% if fileSystError %}
+                                <p>
+                                    <div class="errorfile">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileSystError }}
+                                    </div>
+                                </p>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <p><input type="submit" value="Valider" id="upload"></p>
+                    <p id='mySpinner'><p hidden>En attente de validation</p></p>        
+                </form>
+            </table>
         </div>
         
         <script>

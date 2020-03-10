@@ -26,6 +26,7 @@ context = {}
 def index(request):
     
     form = UploadFileForm(request.POST, request.FILES)
+    print('++++++++++++++++++++++form+++++++++++++++++++++')
     
     global context
     context = {'form':form}
@@ -43,8 +44,7 @@ def index(request):
             print('****************\n\n\n')
             
             if 'fileConf' in request.FILES:
-
-                
+        
                 try:
                     test_format(request.FILES['fileConf'])
                 except FormatError as e:
@@ -128,6 +128,7 @@ def index(request):
             #     print('****************\n\n\n')
             #     print(context)
             if context['fileOpeError'] or context['fileComError'] or context['fileIncError'] or context['fileEltsError'] or context['fileSystError'] != False:
+                # HttpResponseRedirect('/loadFic/')
                 return render(request, 'loadFic/index.html', context)
             else:
                 return render(request, 'loadFic/upload_is_valid.html', context)
@@ -138,7 +139,7 @@ def index(request):
     else:
         print('no post') 
 
-    return render(request, 'loadFic/index.html', context)
+    return render(request, 'loadFic/index.html', {'form':form})
 
 
 

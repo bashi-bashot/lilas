@@ -14,6 +14,11 @@ header
     color: white;
 }
 
+header .boutonApp
+{
+    transition: 0.5s;
+}
+
 header .boutonApp:hover
 {
     background-color: #d3defc;
@@ -131,6 +136,7 @@ table#tabConfSelect th {
 
 table#tabConfSelect tr {
     background-color : #f9f9f9;
+    transition: 0.2s;
 }
 
 table#tabConfSelect th, table#tabConfSelect td{

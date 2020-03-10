@@ -15,6 +15,11 @@ header
     color: white;
 }
 
+header .boutonApp
+{
+    transition: 0.5s;
+}
+
 header .boutonApp:hover
 {
     background-color: #d3defc;
@@ -47,6 +52,34 @@ form li
     margin: 1em;
 }
 
+fieldset
+{
+    width: 75%;
+    padding: 10px;
+    border: 2px solid #6c7ae0;
+ 
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+fieldset:hover legend
+{
+    background-color: #6c7ae0;
+    color: #fff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+legend
+{
+    font-weight: bold;
+    padding: 4px 9px;
+    transition: 0.5s;
+    color: #6c7ae0;
+}
+
 .reset
 { 
     visibility: hidden;
@@ -60,6 +93,36 @@ form li
     background:none;
     border:none;
     color: black;
+}
+
+/************* Personnalisation bouton upload ************/
+
+input[type="submit"]  
+/* Or better yet try giving an ID or class if possible*/
+{
+    border-style: solid;
+    background: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+#upload{
+    /* font-weight: bold; */
+    font-size: 22px;
+    border-color: #6c7ae0;
+    background-color: #6c7ae0;
+    color: #fff;
+    padding: 4px 9px;
+    transition: 0.5s;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#upload:hover{
+    background-color: #d3defc;
+    border-color: #6c7ae0;
+    color: #6c7ae0;
 }
 
 /************* Progress Spinner *****************/
