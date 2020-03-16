@@ -1,4 +1,5 @@
-from django.core.exceptions import *
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 class FormatError (Exception):
     def __init__(self, format):
@@ -13,7 +14,26 @@ def test_format(file):
             return True
     else:
         raise FormatError("Le format attendu est un fichier CSV")
+        # raise ValidationError(_("%(value)s n'est est un fichier CSV"), params={'value':value},)
+        # raise ValidationError("Veuillez sélectionner un fichier au format .CSV")
         return False
+
+
+#********************* VALIDATORS FORMAT ***********************
+
+def validate_format(value):
+    if '.csv' in value.name:
+        # Lorsque le fichier csv est exporté depuis excel ou cree sur un systeme Windows le MIME sera 'application/vnd.ms-excel'
+        if value.content_type!='application/vnd.ms-excel' or value.content_type!='text/csv':
+            return True
+    else:
+        # raise ValidationError(_("%(value)s n'est est un fichier CSV"), params={'value':value},)
+        raise ValidationError("Veuillez sélectionner un fichier au format .CSV")
+        return False
+
+
+
+#***************************************************************
 
 
 class FileError (Exception):

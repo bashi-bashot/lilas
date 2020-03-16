@@ -125,6 +125,12 @@ input[type="submit"]
     color: #6c7ae0;
 }
 
+#upload:disabled{
+    background-color: #ccc;
+    border-color: #999999;
+    color: #3a3a3a;
+}
+
 /************* Progress Spinner *****************/
 
 #loader {

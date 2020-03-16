@@ -9,7 +9,7 @@
         </script>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'loadFic/style.css' %}">
-       
+
         <title>LILAS</title>
     </head>
     <body>
@@ -29,38 +29,41 @@
         </div>
         <div id = "formulaire" style='margin-left: 10em; margin-top: 10em;'>
             <!-- <p><b>Formulaires Transferts de Fichier(s):</b></p> -->
-                <form id="myForm" action="." method="post"  enctype="multipart/form-data">
+                <form id="myForm" action="{% url 'loadFic:index' %}" method="post"  enctype="multipart/form-data">
                     {% csrf_token %}
                     <fieldset><legend>Téléversement des Tickets ARTEMIS - TPH</legend>
                         <ul>
                             <li>Selectionner les <b>tickets operateurs .csv</b>: {{ form.fileOpe }}<input type='button' class='reset' id='resetOpe' value='&#10006;'/>
                                 {% if fileOpeError %}
-                                    <p>
-                                        <div class="errorfile">
-                                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                                        <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileOpeError }}
-                                        </div>
-                                    </p>
+                                    <div class="errorfile">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileOpeError }}
+                                    </div>
                                 {% endif %}
+                                <!-- {% if form.fileOpe.errors %}
+                                        {% for error in form.fileOpe.errors %}
+                                            <div class="errorfile">
+                                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                            <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ error }}
+                                            </div>
+                                        {% endfor %}
+                                {% endif %} -->
+
                             </li>
                             <li>Selectionner les <b>tickets communications .csv</b>: {{ form.fileCom }}<input type='button' class='reset' id='resetCom' value='&#10006;'/>
                                 {% if fileComError %}
-                                    <p>
-                                        <div class="errorfile">
-                                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                                        <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileComError }}
-                                        </div>
-                                    </p>
+                                    <div class="errorfile">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileComError }}
+                                    </div>
                                 {% endif %}
                             </li>
                             <li>Selectionner les <b>tickets incidents .csv</b>: {{ form.fileInc }}<input type='button' class='reset' id='resetInc' value='&#10006;'/>
                                 {% if fileIncError %}
-                                    <p>
-                                        <div class="errorfile">
-                                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                                        <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileIncError }}
-                                        </div>
-                                    </p>
+                                    <div class="errorfile">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileIncError }}
+                                    </div>
                                 {% endif %}
                             </li>
                         </ul>
@@ -69,43 +72,51 @@
                         <ul>
                             <li>Selectionner le <b>ELTS .csv</b> de la nouvelle configuration ARTEMIS: {{ form.fileConf }}<input type='button' class='reset' id='resetConf' value='&#10006;'/>
                                 {% if fileEltsError %}
-                                <p>
                                     <div class="errorfile">
                                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
                                     <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileEltsError }}
                                     </div>
-                                </p>
                                 {% endif %}
                             </li>
                             <li>Selectionner le <b>CONF_SYSTEM .csv</b> de la nouvelle configuration ARTEMIS: {{ form.fileSyst }}<input type='button' class='reset' id='resetSyst' value='&#10006;'/>
                                 {% if fileSystError %}
-                                <p>
                                     <div class="errorfile">
                                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
                                     <strong style='margin-right: 20px;'>[ Erreur ]</strong>{{ fileSystError }}
                                     </div>
-                                </p>
                                 {% endif %}
                             </li>
                         </ul>
                     </fieldset>
-                    <p><input type="submit" value="Valider" id="upload"></p>
+                    <p><input type="submit" value="Valider" id="upload"/></p>
                     <p id='mySpinner'><p hidden>En attente de validation</p></p>        
                 </form>
             </table>
         </div>
-        
-        <script>
-        var elmt = document.getElementById('upload');   //desactivation du bouton "valider" au lancement de la page
-        elmt.disabled = true;      
-
+    </body>
+    
+    <script type="text/javascript">
+    
+        var upload = document.getElementById('upload');   //desactivation du bouton "valider" au lancement de la page
+        upload.disabled = true;
+    
+        // var element = document.getElementsByClassName("errorfile");  //recherche l'existance d'un élément "errorfile"
+        // //If it isn't "undefined" and it isn't "null", then it exists.
+        // for (var i=0; i<element.length; i++) {               
+        //     if(typeof(element[i]) != 'undefined' && element[i] != null){
+        //         // document.getElementById('myForm').reset();
+        //         // location.reload(true);
+        //         location.replace('loadFic');
+        //     }
+        // }
+    
         var formFilled = setInterval(function() {
             var valFileConf = document.getElementById('id_fileConf').value;
             var valFileSyst = document.getElementById('id_fileSyst').value;
             var valFileOpe = document.getElementById('id_fileOpe').value;
             var valFileCom = document.getElementById('id_fileCom').value;
             var valFileInc = document.getElementById('id_fileInc').value;
-
+    
             if (valFileConf=="" && valFileSyst=="" && valFileOpe=="" && valFileCom=="" && valFileInc=="") {
                 var elmt = document.getElementById('upload');   //desactivation du bouton "valider" tant qu'aucun champ n'est rempli
                 elmt.disabled = true;
@@ -114,24 +125,24 @@
                 var elmt = document.getElementById('upload');   //activation du bouton "valider" lorsqu'un champ est rempli
                 elmt.disabled = false;
                 
-
+    
                 //----- Activation d.u.es bouton.s reset symbolise.s par une croix -----//
                 if (valFileConf!="") {
                     var button = document.getElementById('resetConf');
                     button.style.visibility = "visible";
                     
                 };
-
+    
                 if (valFileSyst!="") {
                     var button = document.getElementById('resetSyst');
                     button.style.visibility = "visible";
                 };
-
+    
                 if (valFileOpe!="") {
                     var button = document.getElementById('resetOpe');
                     button.style.visibility = "visible";
                 };
-
+    
                 if (valFileCom!="") {
                     var button = document.getElementById('resetCom');
                     button.style.visibility = "visible";
@@ -144,8 +155,8 @@
                 //----- Fin Activation d.u.es bouton.s reset symbolise.s par une croix -----//
             };
         }, 100); //test effectue toutes les 100ms
-
-
+    
+    
         //----- Suppresion d.u.es fichier.s selectionne.s -----//
         document.getElementById("resetConf").addEventListener("click", myResetConf);
         function myResetConf() {
@@ -153,28 +164,28 @@
             var button = document.getElementById('resetConf');
             button.style.visibility = "hidden";
         };
-
+    
         document.getElementById("resetSyst").addEventListener("click", myResetSyst);
         function myResetSyst() {
             document.getElementById('id_fileSyst').value="";
             var button = document.getElementById('resetSyst');
             button.style.visibility = "hidden";
         };
-
+    
         document.getElementById("resetOpe").addEventListener("click", myResetOpe);
         function myResetOpe() {
             document.getElementById('id_fileOpe').value="";
             var button = document.getElementById('resetOpe');
             button.style.visibility = "hidden";
         };
-
+    
         document.getElementById("resetCom").addEventListener("click", myResetCom);
         function myResetCom() {
             document.getElementById('id_fileCom').value="";
             var button = document.getElementById('resetCom');
             button.style.visibility = "hidden";
         };
-
+    
         document.getElementById("resetInc").addEventListener("click", myResetInc);
         function myResetInc() {
             document.getElementById('id_fileInc').value="";
@@ -183,26 +194,26 @@
         };
         //----- Fin Suppresion d.u.es fichier.s selectionne.s -----//
         
-
+    
         document.getElementById("upload").addEventListener("click", myUpload);
         function myUpload() {
-
+    
             clearInterval(formFilled);      //arret du test sur le remplissage du formulaire
-
+    
             var bodyParent = document.getElementsByTagName("p")[2];     //visualisation du televersement via un spinner en mouvement
             bodyParent.innerHTML = "<p><div id='loader'></div>Upload in Progress</p>";
-
+    
             var elmt = document.getElementsByTagName('html')[0];    //visualisation du televersement via un curseur souris en mouvement
             elmt.style.cursor = "wait";
             
             elmt = document.getElementById('upload');       //desactivation du bouton "valider" pdt le televersement
             elmt.style.cursor = "wait";
             elmt.disabled = true;
-
+    
             elmt = document.getElementById('adminPanel');       //desactivation du bouton "Panneaux d'administration" pdt le televersement
             elmt.style.cursor = "wait";
             elmt.disabled = true;
-
+    
             elmt = document.getElementsByClassName('boutonApp');       //desactivation des bouton "Application" pdt le televersement
             for (var i=0; i<elmt.length; i++) {               
                 elmt[i].style.cursor = "wait";
@@ -220,9 +231,9 @@
             var button = document.getElementById('resetInc');
             button.style.visibility = "hidden";
             //----- Fin suppression d.u.es bouton.s "reset" pdt le televersement -----//
-
+    
             setTimeout(function(){  //desactivation des formulaires pdt le televersement
-
+    
                 elmt = document.getElementById('id_fileConf');
                 elmt.style.cursor = "wait";
                 elmt.disabled = true;
@@ -238,13 +249,13 @@
                 elmt = document.getElementById('id_fileInc');
                 elmt.style.cursor = "wait";
                 elmt.disabled = true;
-
+    
                 alert("[ ATTENTION ]\n\n\nNe pas actualiser cette page web lors du televersement des fichiers.")
                 
             }, 100);  //100ms necessaires afin de laisser le temps au server de lancer le televersement
-
+    
         };
-        </script>
-        
-    </body>    
+    
+    </script>
+    
 </html>
