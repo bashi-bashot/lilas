@@ -34,9 +34,10 @@ def index(request):
     context['fileComError'] = False
     context['fileIncError'] = False
 
+    form = UploadFileForm(request.POST, request.FILES)
+    context['form'] = form
+
     if request.method == 'POST':
-        form = UploadFileForm(request.POST or None, request.FILES)
-        context['form'] = form
         print('post ok')
         if form.is_valid():
             print('\n\n\n****************')
@@ -137,7 +138,6 @@ def index(request):
         
     else:
         print('no post')
-        form = UploadFileForm()
 
     return render(request, 'loadFic/index.html', {'form': form})
 
