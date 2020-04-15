@@ -26,6 +26,11 @@ header
     color: white;
 }
 
+header .boutonApp
+{
+    transition: 0.5s;
+}
+
 header .boutonApp:hover
 {
     background-color: #d3defc;

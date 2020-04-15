@@ -95,7 +95,7 @@ legend
     color: black;
 }
 
-/************* Personnalisation bouton upload ************/
+/************* Personnalisation bouton submit ************/
 
 input[type="submit"]
 {
@@ -127,6 +127,9 @@ input[type="submit"]:disabled{
     border-color: #999999;
     color: #3a3a3a;
 }
+
+/************* Personnalisation des boutons Fichier ************/
+
 
 /************* Progress Spinner *****************/
 
