@@ -217,7 +217,7 @@
             elmt = document.getElementsByClassName('boutonApp');       //desactivation des bouton "Application" pdt le televersement
             for (var i=0; i<elmt.length; i++) {               
                 elmt[i].style.cursor = "wait";
-                elmt[i].onclick = function() { alert("Veuillez attendre la fin du telechargement.."); };                
+                elmt[i].onclick = setTimeout(function() { alert("Veuillez attendre la fin du telechargement.."); }, 100);                
             }
             //----- suppression d.u.es bouton.s "reset" pdt le televersement -----//
             var button = document.getElementById('resetConf');
