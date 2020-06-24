@@ -95,18 +95,15 @@ legend
     color: black;
 }
 
-/************* Personnalisation bouton upload ************/
+/************* Personnalisation bouton submit ************/
 
-input[type="submit"]  
-/* Or better yet try giving an ID or class if possible*/
+input[type="submit"]
 {
     border-style: solid;
     background: none;
     box-shadow: none;
     border-radius: 0px;
-}
 
-#upload{
     /* font-weight: bold; */
     font-size: 22px;
     border-color: #6c7ae0;
@@ -119,17 +116,20 @@ input[type="submit"]
     border-radius: 5px;
 }
 
-#upload:hover{
+input[type="submit"]:hover{
     background-color: #d3defc;
     border-color: #6c7ae0;
     color: #6c7ae0;
 }
 
-#upload:disabled{
+input[type="submit"]:disabled{
     background-color: #ccc;
     border-color: #999999;
     color: #3a3a3a;
 }
+
+/************* Personnalisation des boutons Fichier ************/
+
 
 /************* Progress Spinner *****************/
 

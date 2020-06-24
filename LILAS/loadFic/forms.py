@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.admin import widgets
 from .exception import *
 # from django.core import validators
-from django.core.validators import FileExtensionValidator
+# from django.core.validators import FileExtensionValidator
 
 
 class UploadFileForm(forms.Form):
