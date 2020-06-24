@@ -19,9 +19,6 @@ def index(request):
             if formulaireDates.is_valid(): #Si on a rempli le formulaire de choix de date / secteur / correspondant pour afficher les appels
                 # process the data in form.cleaned_data as required
                 print("FORMULAIRE DATE VALIDE")
-
-                uceListe = Uce.objects.all() #On récupère la liste de toutes les conf des uces
-                confListe = ConfigurationSalle.objects.all() #On récupère la liste de toutes les configurationSalle effectuées
                 
                 date = formulaireDates.cleaned_data['date'] #On récupère la dete de début entrée dans le formulaire
                 
@@ -37,11 +34,12 @@ def index(request):
                 confs = ConfigurationSalle.objects.filter(date__gte = date_time_deb_aware, date__lte = date_time_fin_aware)
                 
                 #On crée la liste d'uces à afficher et on l'initialise
-                uces = confs[0].confUce.all()
-                for i in range(1, confs.count()) :
-                    uces = uces | confs[i].confUce.all()
-
-
+                uces=[]
+                if len(confs) !=0:
+                    uces = confs[0].confUce.all()
+                    for i in range(confs.count()) :
+                        uces = uces | confs[i].confUce.all()  #cet opérateur combine les querysets entre eux
+                
                 #On change la variable contexte à envoyer au html
                 context = { 'uceListe':uces, 'confListe':confs, 'date':date, 'form':formulaireDates}                
                 # redirect to a new URL:
